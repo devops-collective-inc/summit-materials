@@ -85,7 +85,7 @@ Further detail at the original [Community Lightning Demo repo](https://github.co
 
 ### Summit Posts
 
-Various posts on the PowerShell Summit from the community:
+Various posts on the summit from the community:
 
 * [Brian Bunke](https://twitter.com/brianbunke): [Jeffrey Snover AMA at PS/DevOps Summit 2017](http://www.brianbunke.com/blog/2017/04/11/snover-ama/)
 * [Bryce McDonald](https://twitter.com/_brycemcdonald): [PowerShell Summit 2017 Recap](http://www.brycematthew.net/powershell/automation/exchange/summit/2017/04/15/Powershell-Summit-2017.html)
