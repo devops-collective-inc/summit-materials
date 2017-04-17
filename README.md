@@ -8,7 +8,51 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 
 | Topic | Presenter(s) | Materials |
 |---|---|---|
+| Function Lab | Kirk Munro |  |
+| Making Better PowerShell Tools | Don Jones |  |
+| Advanced DSC Configuration Management | Jason Helmick |  |
+| Introducing the PowerShell GitHub Repository | Adam Driscoll |  |
+| DSC Lab | Steven Murawski |  |
+| Unit Testing and Pester: A to Z | Don Jones, Jason Helmick, Missy Januszko |  |
+| PowerShell Remoting Deep Dive | Richard Siddaway |  |
+| Conceptualizing Azure Resource Manager Templates | Will Anderson |  |
+| Keynote: State of the Community | Don Jones |  |
+| Ask Me Anything | Jeffrey Snover |  |
+| State of the Shell | Angel Calvo, Kenneth Hanson |  |
+| Don Jones and The 3 Furies of PowerShell | Don Jones, Richard Siddaway, Jason Helmick, Jeff Hicks   |  |
+| TDD with Chef, DSC and Pester | Robb Schiefer Jr. |  |
+| Building a Just Enough Admin solution in Formula One | James O'Neill |  |
+| Azure PowerShell Team | Aaron Rooney, Mark Cowlishaw |  |
+| Understanding and Creating Your Own DSC Resources | Will Anderson |  |
+| Cross platform Management – Windows/Linux | Jason Helmick  |  |
 | Writing PowerShell Modules | [Warren Frame](https://twitter.com/psCookieMonster) | [WritingModules](https://github.com/RamblingCookieMonster/WritingModules) |
+| You can Mock me as much as you like. | Chris Hunt |  |
+| DSC Deployment at Scale | Mike Walker |  |
+| The path to a DSC Resource module | Luc Dekens |  |
+| Manage Azure Web Apps with Visual Studio and PowerShell | Timothy Warner |  |
+| PowerShell Security | Paul Higginbotham, Lee Holmes |  |
+| Infrastructure Testing with Pester | Richard Siddaway |  |
+| Creating Class Based PowerShell Tools | Jeff Hicks |  |
+| MSDeployAllTheThings - Using MSDeploy everywhere! | Robb Schiefer Jr. |  |
+| Debugging PowerShell (and defensive scripting techniques) | Kirk Munro |  |
+| PKI: Not the SnoozeFest You Expect | Melissa Januszko |  |
+| PowerShell Core 6.0 Test and Code Coverage -Jim Truher, Travis |  |
+| Parallel PowerShell | Richard Siddaway |  |
+| Auto-generated UX (official session title TBD) | Kirk Munro |  |
+| How Azure Automation Solves Key PowerShell Challenges | Jenny Hunter, Eamon O'Reilly |  |
+| PowerShell Remoting and Kerberos Double Hop: Old Problem - New Secure Solution | Ashley McGlone |  |
+| Pull Server, Deconstructed | Don Jones |  |
+| Deploy a 3-Tier Web App Pod with PowerShell and Azure | Timothy Warner |  |
+| Linux Fundamentals for the PowerShell Expert | Anthony Nocentino |  |
+| Where Good Configuration Management Goes Bad | Steven Murawski |  |
+| Authoring with VSCode | David Wilson |  |
+| Automate your DSC Configuration files | Luc Dekens |  |
+| What makes a good shared PowerShell module? | James O'Neill |  |
+| Panel Discussion: Introducing DevOps to your organization - The pitfalls and how to avoid them | powershell.org |  |
+| Community Lightning Demos | Warren Frame  | Below... |
+| The Nano Driven Datacenter | Jeff Hicks |  |
+| Panel Discussion: PowerShell in the real world - skills and techniques for the Enterprise scale. | powershell.org |  |
+| Compiled Cmdlets | Kirk Munro and Chris Hunt |  |
 
 ### Community Lightning Demos
 
