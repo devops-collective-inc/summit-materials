@@ -40,7 +40,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Parallel PowerShell | Richard Siddaway |  |
 | Auto-generated UX (official session title TBD) | Kirk Munro |  |
 | How Azure Automation Solves Key PowerShell Challenges | Jenny Hunter, Eamon O'Reilly |  |
-| PowerShell Remoting and Kerberos Double Hop: Old Problem - New Secure Solution | Ashley McGlone |  |
+| PowerShell Remoting and Kerberos Double Hop: Old Problem - New Secure Solution | Ashley McGlone | [Repo](https://github.com/GoateePFE/PshSummit2017) |
 | Pull Server, Deconstructed | Don Jones |  |
 | Deploy a 3-Tier Web App Pod with PowerShell and Azure | Timothy Warner |  |
 | Linux Fundamentals for the PowerShell Expert | Anthony Nocentino |  |
