@@ -66,7 +66,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Chris Madole | Patching with Maintenance Window and DSC | |
 | [Chris Wahl ](https://twitter.com/ChrisWahl ) ([GitHub](https://github.com/Chriswahl ), [Blog](Wahlnetwork.com )) | Using Pester and PowerCLI to Validate and Remediate vSphere Environments | |
 | [David Jones](https://twitter.com/BladeFireLight) ([GitHub](https://github.com/BladeFireLight)) | WinPE with powershell | |
-| [Glenn Sarti](https://twitter.com/glennsarti) ([GitHub](https://github.com/glennsarti), [Blog](http://glennsarti.github.io)) | powershell@puppet.com | [SpeakerDeck](https://speakerdeck.com/glennsarti/powershell-at-puppet-dot-com-12-apr-2017) |
+| [Glenn Sarti](https://twitter.com/glennsarti) ([GitHub](https://github.com/glennsarti), [Blog](http://glennsarti.github.io)) | powershell<i></i>@puppet.com | [SpeakerDeck](https://speakerdeck.com/glennsarti/powershell-at-puppet-dot-com-12-apr-2017) |
 | [Joel Bennett](https://twitter.com/Jaykul) ([GitHub](https://github.com/Jaykul), [Blog](http://HuddledMasses.org/blog)) | PowerLine: Custom prompts made easy | |
 | [Joel Reed](https://twitter.com/AKAJoelReed) ([Blog](https://blog.start-transcript.com/)) | Scheduled Task Release Pipeline | [ScheduledTaskReleasePipeline](https://github.com/jlrd/ScheduledTaskReleasePipeline) |
 | [John Mello](https://twitter.com/Iczer1) ([GitHub](https://github.com/https://github.com/Iczer1), [Blog](http://mellositmusings.com/)) | Leveraging properties on AD objects as persistent storage for scripted tasks | |
