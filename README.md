@@ -36,7 +36,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | MSDeployAllTheThings - Using MSDeploy everywhere! | Robb Schiefer Jr. |  |
 | Debugging PowerShell (and defensive scripting techniques) | Kirk Munro |  |
 | PKI: Not the SnoozeFest You Expect | Melissa Januszko |  |
-| PowerShell Core 6.0 Test and Code Coverage -Jim Truher, Travis |  |
+| PowerShell Core 6.0 Test and Code Coverage | Jim Truher, Travis |  |
 | Parallel PowerShell | Richard Siddaway |  |
 | Auto-generated UX (official session title TBD) | Kirk Munro |  |
 | How Azure Automation Solves Key PowerShell Challenges | Jenny Hunter, Eamon O'Reilly |  |
