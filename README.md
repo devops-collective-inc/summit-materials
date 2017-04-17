@@ -26,7 +26,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Understanding and Creating Your Own DSC Resources | Will Anderson |  |
 | Cross platform Management – Windows/Linux | Jason Helmick  |  |
 | Writing PowerShell Modules | [Warren Frame](https://twitter.com/psCookieMonster) | [WritingModules](https://github.com/RamblingCookieMonster/WritingModules) |
-| You can Mock me as much as you like. | Chris Hunt |  |
+| You can Mock me as much as you like. | [Chris Hunt](https://twitter.com/LogicalDiagram) | [pssummit2017-mocking](https://github.com/cdhunt/pssummit2017-mocking) |
 | DSC Deployment at Scale | Mike Walker |  |
 | The path to a DSC Resource module | Luc Dekens |  |
 | Manage Azure Web Apps with Visual Studio and PowerShell | Timothy Warner |  |
