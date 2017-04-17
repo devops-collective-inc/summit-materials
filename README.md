@@ -79,6 +79,6 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | [Rob Reynolds](https://twitter.com/ferventcoder) ([GitHub](https://github.com/ferventcoder), [Blog](https://codebetter.com/robreynolds)) | Software Management Automation with Chocolatey | |
 | [Steve Parankewich](https://twitter.com/powershellblog) ([Blog](www.powershellblogger.com)) | Tool Making With PowerShell | |
 | [Trevor Sullivan](https://twitter.com/pcgeek86) | Structuring a PowerShell Module | |
-| [Wesley Kirkland](https://twitter.com/unleashthecloud) ([GitHub](https://github.com/wesleykirkland)) | Dynamic Code | [Repo](https://github.com/wesleykirkland/Summit2017) |
+| [Wesley Kirkland](https://twitter.com/unleashthecloud) ([GitHub](https://github.com/wesleykirkland)) | Meta Programming | [Repo](https://github.com/wesleykirkland/Summit2017) |
 
 Further detail at the original [Community Lightning Demo repo](https://github.com/RamblingCookieMonster/CommunityLightningDemos2017)
