@@ -74,7 +74,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | [Josh Rickard](https://twitter.com/MS_dministrator) ([GitHub](https://github.com/MSAdministrator ), [Blog](MSAdministrator.com)) | PSRegistry | [PSRegistry](https://github.com/MSAdministrator/PSRegistry) |
 | [Kelcey Vehanen](https://twitter.com/pixelrebirth) ([GitHub](https://github.com/pixelrebirth)) | Importance of Code Coverage | |
 | [Lawrence Hwang](https://twitter.com/CPoweredLion) ([GitHub](https://github.com/LawrenceHwang), [Blog](https://poshsea.blogspot.ca)) | Deploy AWS Infrastructure with CloudFormation and PowerShell | [Repo](https://github.com/LawrenceHwang/PowerShellSummit2017)|
-| [Michael T Lombardi](https://twitter.com/barbariankb) ([GitHub](https://github.com/michaeltlombardi), [Blog](https://michaeltlombardi.gitlab.io)) | Documentation: Do the Needful | |
+| [Michael T Lombardi](https://twitter.com/barbariankb) ([GitHub](https://github.com/michaeltlombardi), [Blog](https://michaeltlombardi.gitlab.io)) | Documentation: Do the Needful | [Docs](http://michaeltlombardi.gitlab.io/needful-docs/) and [Repo](https://gitlab.com/michaeltlombardi/needful-docs) |
 | [Rob Pleau](https://twitter.com/rjpleau) | PowerShell Release Pipelines with TFS, vscode, and psake | |
 | [Rob Reynolds](https://twitter.com/ferventcoder) ([GitHub](https://github.com/ferventcoder), [Blog](https://codebetter.com/robreynolds)) | Software Management Automation with Chocolatey | |
 | [Steve Parankewich](https://twitter.com/powershellblog) ([Blog](www.powershellblogger.com)) | Tool Making With PowerShell | |
