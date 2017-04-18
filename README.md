@@ -10,7 +10,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 |---|---|---|
 | Function Lab | Kirk Munro |  |
 | Making Better PowerShell Tools | Don Jones |  |
-| Advanced DSC Configuration Management | Jason Helmick |  |
+| Advanced DSC Configuration Management | Jason Helmick | [SummitAdvDSC] (https://github.com/majst32/SummitAdvDSC) |
 | Introducing the PowerShell GitHub Repository | Adam Driscoll |  |
 | DSC Lab | Steven Murawski |  |
 | Unit Testing and Pester: A to Z | Don Jones, Jason Helmick, Missy Januszko |  |
@@ -35,7 +35,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Creating Class Based PowerShell Tools | Jeff Hicks |  |
 | MSDeployAllTheThings - Using MSDeploy everywhere! | Robb Schiefer Jr. |  |
 | Debugging PowerShell (and defensive scripting techniques) | Kirk Munro |  |
-| PKI: Not the SnoozeFest You Expect | Melissa Januszko |  |
+| PKI: Not the SnoozeFest You Expect | Melissa Januszko | [SummitPKI] (https://github.com/majst32/SummitPKI) |
 | PowerShell Core 6.0 Test and Code Coverage | Jim Truher, Travis |  |
 | Parallel PowerShell | Richard Siddaway |  |
 | Auto-generated UX (official session title TBD) | Kirk Munro |  |
