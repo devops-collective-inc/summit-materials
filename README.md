@@ -61,7 +61,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | [Adam Murray](https://twitter.com/muzzar78) | Home Grown CMDB for Disposable App Environments | |
 | [Brandon Olin](https://twitter.com/devblackops) ([GitHub](https://github.com/devblackops), [Blog](https://devblackops.io)) | Invoke-ChatOps: Using PoshBot in Slack | |
 | [Brian Bunke](https://twitter.com/brianbunke) ([GitHub](https://github.com/brianbunke), [Blog](http://www.brianbunke.com)) | Being an Upstanding Gitizen | |
-| [Chris Brucker](https://twitter.com/bruckect) ([GitHub](https://github.com/@bruckect)) | How to scale a monolith using PowerShell | |
+| [Chris Brucker](https://twitter.com/bruckect) ([GitHub](https://github.com/@bruckect)) | How to scale a monolith using PowerShell | [GitLab Repo](https://gitlab.com/bruckect/PSHSummit2017) |
 | Chris Gardner ([GitHub](https://github.com/ChrisLGardner)) | Lability: Building environments from code | |
 | Chris Madole | Patching with Maintenance Window and DSC | |
 | [Chris Wahl ](https://twitter.com/ChrisWahl ) ([GitHub](https://github.com/Chriswahl ), [Blog](Wahlnetwork.com )) | Using Pester and PowerCLI to Validate and Remediate vSphere Environments | |
