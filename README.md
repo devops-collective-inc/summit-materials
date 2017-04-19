@@ -45,7 +45,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Deploy a 3-Tier Web App Pod with PowerShell and Azure | Timothy Warner |  |
 | Linux Fundamentals for the PowerShell Expert | Anthony Nocentino |  |
 | Where Good Configuration Management Goes Bad | Steven Murawski |  |
-| Authoring with VSCode | David Wilson |  |
+| Authoring with VSCode | [David Wilson](https://twitter.com/daviwil) | [VSCodeDeepDive.md](https://gist.github.com/daviwil/c28af0d545e83831b9d5b6a269b0e4c3) |
 | Automate your DSC Configuration files | Luc Dekens |  |
 | What makes a good shared PowerShell module? | James O'Neill |  |
 | Panel Discussion: Introducing DevOps to your organization - The pitfalls and how to avoid them | powershell.org |  |
