@@ -66,7 +66,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Chris Gardner ([GitHub](https://github.com/ChrisLGardner)) | Lability: Building environments from code | |
 | Chris Madole | Patching with Maintenance Window and DSC | |
 | [Chris Wahl ](https://twitter.com/ChrisWahl ) ([GitHub](https://github.com/Chriswahl ), [Blog](http://Wahlnetwork.com )) | Using Pester and PowerCLI to Validate and Remediate vSphere Environments | [Vester](https://github.com/WahlNetwork/Vester) |
-| [David Jones](https://twitter.com/BladeFireLight) ([GitHub](https://github.com/BladeFireLight)) | WinPE with powershell | |
+| [David Jones](https://twitter.com/BladeFireLight) ([GitHub](https://github.com/BladeFireLight)) | WinPE with powershell | [Gist](https://gist.github.com/BladeFireLight/2b59361d65fbe36881649944fde60b66) |
 | [Glenn Sarti](https://twitter.com/glennsarti) ([GitHub](https://github.com/glennsarti), [Blog](http://glennsarti.github.io)) | powershell<i></i>@puppet.com | [SpeakerDeck](https://speakerdeck.com/glennsarti/powershell-at-puppet-dot-com-12-apr-2017) |
 | [Joel Bennett](https://twitter.com/Jaykul) ([GitHub](https://github.com/Jaykul), [Blog](http://HuddledMasses.org/blog)) | PowerLine: Custom prompts made easy | |
 | [Joel Reed](https://twitter.com/AKAJoelReed) ([Blog](https://blog.start-transcript.com/)) | Scheduled Task Release Pipeline | [ScheduledTaskReleasePipeline](https://github.com/jlrd/ScheduledTaskReleasePipeline) |
