@@ -30,6 +30,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | DSC Deployment at Scale | Mike Walker |  |
 | The path to a DSC Resource module | Luc Dekens |  |
 | Manage Azure Web Apps with Visual Studio and PowerShell | Timothy Warner |  |
+| Software Management with PowerShell DSC and Chocolatey | [Rob Reynolds](https://twitter.com/ferventcoder) | [Slides](https://www.slideshare.net/ferventcoder/software-management-with-powershell-dsc-and-chocolatey-powershell-summit-2017)/[Repo](https://github.com/ferventcoder/puppet-chocolatey-presentation)
 | PowerShell Security | Paul Higginbotham, Lee Holmes |  |
 | Infrastructure Testing with Pester | Richard Siddaway |  |
 | Creating Class Based PowerShell Tools | Jeff Hicks |  |
@@ -58,7 +59,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 
 | Presenter | Topic | Materials |
 |---|---|---|
-| [Adam Murray](https://twitter.com/muzzar78) | Home Grown CMDB for Disposable App Environments | |
+| [Adam Murray](https://twitter.com/muzzar78) | Home Grown CMDB for Disposable App Environments | [SpeakerDeck](https://speakerdeck.com/muzzar78/2017-powershell-devops-summit-lightning-demo-home-grown-cmdb-for-disposable-app-environments) |
 | [Brandon Olin](https://twitter.com/devblackops) ([GitHub](https://github.com/devblackops), [Blog](https://devblackops.io)) | Invoke-ChatOps: Using PoshBot in Slack | |
 | [Brian Bunke](https://twitter.com/brianbunke) ([GitHub](https://github.com/brianbunke), [Blog](http://www.brianbunke.com)) | Being an Upstanding Gitizen | |
 | [Chris Brucker](https://twitter.com/bruckect) ([GitHub](https://github.com/@bruckect)) | How to scale a monolith using PowerShell | [GitLab Repo](https://gitlab.com/bruckect/PSHSummit2017) |
@@ -76,7 +77,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | [Lawrence Hwang](https://twitter.com/CPoweredLion) ([GitHub](https://github.com/LawrenceHwang), [Blog](https://poshsea.blogspot.ca)) | Deploy AWS Infrastructure with CloudFormation and PowerShell | [Repo](https://github.com/LawrenceHwang/PowerShellSummit2017)|
 | [Michael T Lombardi](https://twitter.com/barbariankb) ([GitHub](https://github.com/michaeltlombardi), [Blog](https://michaeltlombardi.gitlab.io)) | Documentation: Do the Needful | [Docs](http://michaeltlombardi.gitlab.io/needful-docs/) and [Repo](https://gitlab.com/michaeltlombardi/needful-docs) |
 | [Rob Pleau](https://twitter.com/rjpleau) | PowerShell Release Pipelines with TFS, vscode, and psake | |
-| [Rob Reynolds](https://twitter.com/ferventcoder) ([GitHub](https://github.com/ferventcoder), [Blog](https://codebetter.com/robreynolds)) | Software Management Automation with Chocolatey | |
+| [Rob Reynolds](https://twitter.com/ferventcoder) ([GitHub](https://github.com/ferventcoder), [Blog](https://codebetter.com/robreynolds)) | Software Management Automation with Chocolatey | [Repo](https://github.com/ferventcoder/puppet-chocolatey-presentation) |
 | [Steve Parankewich](https://twitter.com/powershellblog) ([Blog](www.powershellblogger.com)) | Tool Making With PowerShell | |
 | [Trevor Sullivan](https://twitter.com/pcgeek86) | Structuring a PowerShell Module | |
 | [Wesley Kirkland](https://twitter.com/unleashthecloud) ([GitHub](https://github.com/wesleykirkland)) | Meta Programming | [Repo](https://github.com/wesleykirkland/Summit2017) |
