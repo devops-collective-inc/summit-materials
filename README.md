@@ -64,7 +64,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | [Brian Bunke](https://twitter.com/brianbunke) ([GitHub](https://github.com/brianbunke), [Blog](http://www.brianbunke.com)) | Being an Upstanding Gitizen | |
 | [Chris Brucker](https://twitter.com/bruckect) ([GitHub](https://github.com/@bruckect)) | How to scale a monolith using PowerShell | [GitLab Repo](https://gitlab.com/bruckect/PSHSummit2017) |
 | Chris Gardner ([GitHub](https://github.com/ChrisLGardner)) | Lability: Building environments from code | |
-| Chris Madole | Patching with Maintenance Window and DSC | |
+| Chris Madole | Patching with Maintenance Window and DSC | [AutoPatchDSC](https://github.com/chmadole/AutoPatchDSC) |
 | [Chris Wahl ](https://twitter.com/ChrisWahl ) ([GitHub](https://github.com/Chriswahl ), [Blog](http://Wahlnetwork.com )) | Using Pester and PowerCLI to Validate and Remediate vSphere Environments | [Vester](https://github.com/WahlNetwork/Vester) |
 | [David Jones](https://twitter.com/BladeFireLight) ([GitHub](https://github.com/BladeFireLight)) | WinPE with powershell | [Gist](https://gist.github.com/BladeFireLight/2b59361d65fbe36881649944fde60b66) |
 | [Glenn Sarti](https://twitter.com/glennsarti) ([GitHub](https://github.com/glennsarti), [Blog](http://glennsarti.github.io)) | powershell<i></i>@puppet.com | [SpeakerDeck](https://speakerdeck.com/glennsarti/powershell-at-puppet-dot-com-12-apr-2017) |
