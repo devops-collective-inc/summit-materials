@@ -21,32 +21,32 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | State of the Shell | Angel Calvo, Kenneth Hanson |  |
 | Don Jones and The 3 Furies of PowerShell | Don Jones, Richard Siddaway, Jason Helmick, Jeff Hicks   |  |
 | TDD with Chef, DSC and Pester | Robb Schiefer Jr. |  |
-| Building a Just Enough Admin solution in Formula One | James O'Neill |  |
+| Building a Just Enough Admin solution in Formula One | James O'Neill | [Recording](https://www.youtube.com/watch?v=-SMJkoPbpi4&index=9&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | Azure PowerShell Team | Aaron Rooney, Mark Cowlishaw |  |
 | Understanding and Creating Your Own DSC Resources | Will Anderson |  |
 | Cross platform Management – Windows/Linux | Jason Helmick  |  |
-| Writing PowerShell Modules | [Warren Frame](https://twitter.com/psCookieMonster) | [WritingModules](https://github.com/RamblingCookieMonster/WritingModules) |
+| Writing PowerShell Modules | [Warren Frame](https://twitter.com/psCookieMonster) | [WritingModules](https://github.com/RamblingCookieMonster/WritingModules), [Recording](https://www.youtube.com/watch?v=J3ZUS4t6jrE&index=11&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | You can Mock me as much as you like. | [Chris Hunt](https://twitter.com/LogicalDiagram) | [pssummit2017-mocking](https://github.com/cdhunt/pssummit2017-mocking) |
 | DSC Deployment at Scale | Mike Walker |  |
 | The path to a DSC Resource module | Luc Dekens |  |
 | Manage Azure Web Apps with Visual Studio and PowerShell | Timothy Warner |  |
 | Software Management with PowerShell DSC and Chocolatey | [Rob Reynolds](https://twitter.com/ferventcoder) | [Slides](https://www.slideshare.net/ferventcoder/software-management-with-powershell-dsc-and-chocolatey-powershell-summit-2017)/[Repo](https://github.com/ferventcoder/puppet-chocolatey-presentation)
-| PowerShell Security | Paul Higginbotham, Lee Holmes |  |
+| PowerShell Security | Paul Higginbotham, Lee Holmes | [Recording](https://www.youtube.com/watch?v=BcfLCkvmh9Q&index=13&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | Infrastructure Testing with Pester | Richard Siddaway |  |
 | Creating Class Based PowerShell Tools | Jeff Hicks |  |
 | MSDeployAllTheThings - Using MSDeploy everywhere! | Robb Schiefer Jr. |  |
-| Debugging PowerShell (and defensive scripting techniques) | Kirk Munro |  |
+| Debugging PowerShell (and defensive scripting techniques) | Kirk Munro | [Recording](https://www.youtube.com/watch?v=3Z3BAldF_EE&index=8&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | PKI: Not the SnoozeFest You Expect | Melissa Januszko | [SummitPKI](https://github.com/majst32/SummitPKI) |
-| PowerShell Core 6.0 Test and Code Coverage | Jim Truher, Travis Plunk | [Presentation](https://github.com/JamesWTruher/PSDocsAndScripts/blob/master/CodeCoverage-DSC%2BPSCORE.pptx)  |
+| PowerShell Core 6.0 Test and Code Coverage | Jim Truher, Travis Plunk | [Presentation](https://github.com/JamesWTruher/PSDocsAndScripts/blob/master/CodeCoverage-DSC%2BPSCORE.pptx), [Recording](https://www.youtube.com/watch?v=Zt4yOCWOTiE&index=14&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | Parallel PowerShell | Richard Siddaway |  |
 | Auto-generated UX (official session title TBD) | Kirk Munro |  |
-| How Azure Automation Solves Key PowerShell Challenges | Jenny Hunter, Eamon O'Reilly |  |
+| How Azure Automation Solves Key PowerShell Challenges | Jenny Hunter, Eamon O'Reilly | [Recording](https://www.youtube.com/watch?v=vnw39HaMp3M&index=7&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | PowerShell Remoting and Kerberos Double Hop: Old Problem - New Secure Solution | Ashley McGlone | [Repo](https://github.com/GoateePFE/PshSummit2017) |
 | Pull Server, Deconstructed | Don Jones |  |
 | Deploy a 3-Tier Web App Pod with PowerShell and Azure | Timothy Warner |  |
 | Linux Fundamentals for the PowerShell Expert | Anthony Nocentino |  |
 | Where Good Configuration Management Goes Bad | Steven Murawski |  |
-| Authoring with VSCode | [David Wilson](https://twitter.com/daviwil) | [VSCodeDeepDive.md](https://gist.github.com/daviwil/c28af0d545e83831b9d5b6a269b0e4c3) |
+| Authoring with VSCode | [David Wilson](https://twitter.com/daviwil) | [VSCodeDeepDive.md](https://gist.github.com/daviwil/c28af0d545e83831b9d5b6a269b0e4c3), [Recording](https://www.youtube.com/watch?v=qmO9X96v5kM&index=5&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | Automate your DSC Configuration files | Luc Dekens |  |
 | What makes a good shared PowerShell module? | James O'Neill |  |
 | Panel Discussion: Introducing DevOps to your organization - The pitfalls and how to avoid them | powershell.org |  |
