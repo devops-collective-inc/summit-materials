@@ -61,7 +61,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 |---|---|---|
 | [Adam Murray](https://twitter.com/muzzar78) | Home Grown CMDB for Disposable App Environments | [SpeakerDeck](https://speakerdeck.com/muzzar78/2017-powershell-devops-summit-lightning-demo-home-grown-cmdb-for-disposable-app-environments) |
 | [Brandon Olin](https://twitter.com/devblackops) ([GitHub](https://github.com/devblackops), [Blog](https://devblackops.io)) | Invoke-ChatOps: Using PoshBot in Slack | |
-| [Brian Bunke](https://twitter.com/brianbunke) ([GitHub](https://github.com/brianbunke), [Blog](http://www.brianbunke.com)) | Being an Upstanding Gitizen | |
+| [Brian Bunke](https://twitter.com/brianbunke) ([GitHub](https://github.com/brianbunke), [Blog](http://www.brianbunke.com)) | Being an Upstanding Gitizen | [Blog Series](http://www.brianbunke.com/blog/2017/05/08/github-101/) |
 | [Chris Brucker](https://twitter.com/bruckect) ([GitHub](https://github.com/@bruckect)) | How to scale a monolith using PowerShell | [GitLab Repo](https://gitlab.com/bruckect/PSHSummit2017) |
 | Chris Gardner ([GitHub](https://github.com/ChrisLGardner)) | Lability: Building environments from code | |
 | Chris Madole | Patching with Maintenance Window and DSC | [AutoPatchDSC](https://github.com/chmadole/AutoPatchDSC) |
