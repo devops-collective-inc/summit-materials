@@ -14,7 +14,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Introducing the PowerShell GitHub Repository | Adam Driscoll |  |
 | DSC Lab | Steven Murawski |  |
 | Unit Testing and Pester: A to Z | Don Jones, Jason Helmick, Missy Januszko |  |
-| PowerShell Remoting Deep Dive | Richard Siddaway |  |
+| PowerShell Remoting Deep Dive | [Richard Siddaway](https://twitter.com/RSiddaway) | [Repo](https://github.com/RichardSiddaway/Summit2017) |
 | Conceptualizing Azure Resource Manager Templates | Will Anderson |  |
 | Keynote: State of the Community | Don Jones |  |
 | Ask Me Anything | Jeffrey Snover |  |
@@ -32,13 +32,13 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Manage Azure Web Apps with Visual Studio and PowerShell | Timothy Warner |  |
 | Software Management with PowerShell DSC and Chocolatey | [Rob Reynolds](https://twitter.com/ferventcoder) | [Slides](https://www.slideshare.net/ferventcoder/software-management-with-powershell-dsc-and-chocolatey-powershell-summit-2017)/[Repo](https://github.com/ferventcoder/puppet-chocolatey-presentation)
 | PowerShell Security | Paul Higginbotham, Lee Holmes | [Recording](https://www.youtube.com/watch?v=BcfLCkvmh9Q&index=13&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
-| Infrastructure Testing with Pester | Richard Siddaway |  |
-| Creating Class Based PowerShell Tools | Jeff Hicks |  |
+| Infrastructure Testing with Pester | [Richard Siddaway](https://twitter.com/RSiddaway) | [Repo](https://github.com/RichardSiddaway/Summit2017) |
+| Creating Class Based PowerShell Tools | [Jeff Hicks](https://twitter.com/JeffHicks) | [Repo](https://github.com/jdhitsolutions/Demo-Class-Based-Tools) |
 | MSDeployAllTheThings - Using MSDeploy everywhere! | Robb Schiefer Jr. |  |
 | Debugging PowerShell (and defensive scripting techniques) | Kirk Munro | [Recording](https://www.youtube.com/watch?v=3Z3BAldF_EE&index=8&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | PKI: Not the SnoozeFest You Expect | Melissa Januszko | [SummitPKI](https://github.com/majst32/SummitPKI) |
 | PowerShell Core 6.0 Test and Code Coverage | Jim Truher, Travis Plunk | [Presentation](https://github.com/JamesWTruher/PSDocsAndScripts/blob/master/CodeCoverage-DSC%2BPSCORE.pptx), [Recording](https://www.youtube.com/watch?v=Zt4yOCWOTiE&index=14&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
-| Parallel PowerShell | Richard Siddaway |  |
+| Parallel PowerShell | [Richard Siddaway](https://twitter.com/RSiddaway) | [Repo](https://github.com/RichardSiddaway/Summit2017) |
 | Auto-generated UX (official session title TBD) | Kirk Munro |  |
 | How Azure Automation Solves Key PowerShell Challenges | Jenny Hunter, Eamon O'Reilly | [Recording](https://www.youtube.com/watch?v=vnw39HaMp3M&index=7&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | PowerShell Remoting and Kerberos Double Hop: Old Problem - New Secure Solution | Ashley McGlone | [Repo](https://github.com/GoateePFE/PshSummit2017) |
@@ -51,7 +51,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | What makes a good shared PowerShell module? | James O'Neill |  |
 | Panel Discussion: Introducing DevOps to your organization - The pitfalls and how to avoid them | powershell.org |  |
 | Community Lightning Demos | Warren Frame  | Below... |
-| The Nano Driven Datacenter | Jeff Hicks |  |
+| The Nano Driven Datacenter | [Jeff Hicks](https://twitter.com/JeffHicks) | [Repo](https://github.com/jdhitsolutions/NanoDatacenter) |
 | Panel Discussion: PowerShell in the real world - skills and techniques for the Enterprise scale. | powershell.org |  |
 | Compiled Cmdlets | Kirk Munro and Chris Hunt |  |
 
