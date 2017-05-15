@@ -28,7 +28,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Writing PowerShell Modules | [Warren Frame](https://twitter.com/psCookieMonster) | [WritingModules](https://github.com/RamblingCookieMonster/WritingModules), [Recording](https://www.youtube.com/watch?v=J3ZUS4t6jrE&index=11&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
 | You can Mock me as much as you like. | [Chris Hunt](https://twitter.com/LogicalDiagram) | [pssummit2017-mocking](https://github.com/cdhunt/pssummit2017-mocking) |
 | DSC Deployment at Scale | Mike Walker |  |
-| The path to a DSC Resource module | Luc Dekens |  |
+| The path to a DSC Resource module | [Luc Dekens](https://twitter.com/LucD22)| [Repo](https://github.com/lucdekens/Presos/blob/master/PowerShell%20%26%20DevOps%20Global%20Summit%202017/DSC%20and%20vSphere.pptx) |
 | Manage Azure Web Apps with Visual Studio and PowerShell | Timothy Warner |  |
 | Software Management with PowerShell DSC and Chocolatey | [Rob Reynolds](https://twitter.com/ferventcoder) | [Slides](https://www.slideshare.net/ferventcoder/software-management-with-powershell-dsc-and-chocolatey-powershell-summit-2017)/[Repo](https://github.com/ferventcoder/puppet-chocolatey-presentation)
 | PowerShell Security | Paul Higginbotham, Lee Holmes | [Recording](https://www.youtube.com/watch?v=BcfLCkvmh9Q&index=13&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
@@ -47,7 +47,7 @@ Storage for materials (speaker &amp; attendee) from past Summit events
 | Linux Fundamentals for the PowerShell Expert | Anthony Nocentino |  |
 | Where Good Configuration Management Goes Bad | Steven Murawski |  |
 | Authoring with VSCode | [David Wilson](https://twitter.com/daviwil) | [VSCodeDeepDive.md](https://gist.github.com/daviwil/c28af0d545e83831b9d5b6a269b0e4c3), [Recording](https://www.youtube.com/watch?v=qmO9X96v5kM&index=5&list=PLfeA8kIs7CoeQRT1xwtH-I3cfDvm8rNlk) |
-| Automate your DSC Configuration files | Luc Dekens |  |
+| Automate your DSC Configuration files | [Luc Dekens](https://twitter.com/LucD22) | [Repo](https://github.com/lucdekens/Presos/blob/master/PowerShell%20%26%20DevOps%20Global%20Summit%202017/vSphereDSC%20Reverse.pptx) |
 | What makes a good shared PowerShell module? | James O'Neill |  |
 | Panel Discussion: Introducing DevOps to your organization - The pitfalls and how to avoid them | powershell.org |  |
 | Community Lightning Demos | Warren Frame  | Below... |
