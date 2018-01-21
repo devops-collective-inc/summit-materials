@@ -91,4 +91,4 @@ Various posts on the summit from the community:
 * [Brian Bunke](https://twitter.com/brianbunke): [Jeffrey Snover AMA at PS/DevOps Summit 2017](http://www.brianbunke.com/blog/2017/04/11/snover-ama/)
 * [Bryce McDonald](https://twitter.com/_brycemcdonald): [PowerShell Summit 2017 Recap](http://www.brycematthew.net/powershell/automation/exchange/summit/2017/04/15/Powershell-Summit-2017.html)
 * [Michael T Lombardi](https://twitter.com/barbariankb): [PowerShell and DevOps Summit 2017 Trip Report](https://gitlab.com/michaeltlombardi/PSHSummit-2017/blob/master/README.md)
-
+[Michael J Teske](https://twitter.com/teskemj): [PowerShell Summit 2017-A Noobs Reflection](https://techsolutionswi.wordpress.com/2017/05/19/powershell-summit-2017-a-noobies-reflection/)
