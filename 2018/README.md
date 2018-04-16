@@ -76,7 +76,7 @@
 | Project RedPen - Integration Testing made easy | Brandon Lundt ||
 | A GUI-like Menu System for Your Functions or Scripts | [Al Degutis](https://twitter.com/frumpa) | [Repo](https://github.com/adegutis/Start-Menu)|
 | Building REST Methods for the Average PowerShell Joe | Chris Brucker ||
-| Inspect Your Functions | Andrew Pla ||
+| Inspect Your Functions | [Andrew Pla](https://twitter.com/plaandrew22) ||
 | OneShell to rule them all | Mike Campbell ||
 | PowerShell SQL Module Review | Greg Tate ||
 | Using Octopus Deploy to orchestrate PowerShell and DSC | Matt McElreath ||
