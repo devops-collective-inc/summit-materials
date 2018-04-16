@@ -70,7 +70,7 @@
 
 ## Community Lightning Demos
 
-| Presenter | Topic | Materials |
+| Topic | Presenter | Materials |
 |---|---|---|
 | Jupyter and PowerShell | Joel Bennett ||
 | Project RedPen - Integration Testing made easy | Brandon Lundt ||
