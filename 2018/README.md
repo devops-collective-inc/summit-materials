@@ -17,7 +17,7 @@
 | Building PowerShell applications that operate on a Planetary scale | Justin Sider ||
 | DSC vs. "The Others" - A Song of Configuration Management | Missy Januszko ||
 | One MOF to rule them all, and in the Azure bind them | Jacob Morrison ||
-| Developing with PowerShell Classes: Here be Dragons | Brandon Olin ||
+| Developing with PowerShell Classes: Here be Dragons | [Brandon Olin](https://twitter.com/devblackops) | [Slides](https://speakerdeck.com/devblackops/powershell-classes-here-be-dragons), [Repo](https://github.com/devblackops/pssummit2018-classes) |
 | OpenSSH Internals for PowerShell Pros | Anthony Nocentino ||
 | Connecting the Dots with PowerShell | [Warren Frame](https://twitter.com/psCookieMonster) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/a8/dots.pptx), [Repo](https://github.com/RamblingCookieMonster/Dots) |
 | PowerShell Team: PowerShell Core | Joey Aiello ||
@@ -64,7 +64,7 @@
 | Script blocks decoded | Richard Siddaway ||
 | PowerShell Team: Using PowerShell From a Browser to Manage Cloud Resources | Danny Maertens ||
 | Setting Up Your Own Private, Secured Package Repository - Why and How | Darwin Sanoy ||
-| Invoke-ChatOps: Level up and change your culture with chat and PowerShell | Brandon Olin ||
+| Invoke-ChatOps: Level up and change your culture with chat and PowerShell | [Brandon Olin](https://twitter.com/devblackops) | [Slides](https://speakerdeck.com/devblackops/invoke-chatops-level-up-and-change-your-culture-with-chat-and-powershell), [Repo](https://github.com/devblackops/pssummit2018-chatops) |
 | Documentation as User Experience | [Michael T Lombardi](https://twitter.com/barbariankb) | [Slides](https://gitpitch.com/michaeltlombardi/documentarian/gitpitch?grs=gitlab#/), [Slide Source](https://gitlab.com/michaeltlombardi/documentarian/blob/gitpitch/), [SpeakerDeck](https://speakerdeck.com/michaeltlombardi/documentation-as-ux-rightfully-writing-the-right-things), [Project](https://gitlab.com/documentarian/documentarian), [Docs](http://documentarian.gitlab.io/documentarian/) |
 | What's Cooking with PowerShell Core? | Maximo Trinidad ||
 
