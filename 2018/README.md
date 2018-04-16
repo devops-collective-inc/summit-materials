@@ -17,7 +17,7 @@
 | Building PowerShell applications that operate on a Planetary scale | Justin Sider ||
 | DSC vs. "The Others" - A Song of Configuration Management | Missy Januszko ||
 | One MOF to rule them all, and in the Azure bind them | Jacob Morrison ||
-| Developing with PowerShell Classes: Here be Dragons | Brandon Olin ||
+| Developing with PowerShell Classes: Here be Dragons | [Brandon Olin](https://twitter.com/devblackops) | [Slides](https://speakerdeck.com/devblackops/powershell-classes-here-be-dragons), [Repo](https://github.com/devblackops/pssummit2018-classes) |
 | OpenSSH Internals for PowerShell Pros | Anthony Nocentino ||
 | Connecting the Dots with PowerShell | [Warren Frame](https://twitter.com/psCookieMonster) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/a8/dots.pptx), [Repo](https://github.com/RamblingCookieMonster/Dots) |
 | PowerShell Team: PowerShell Core | Joey Aiello ||
@@ -64,7 +64,7 @@
 | Script blocks decoded | Richard Siddaway ||
 | PowerShell Team: Using PowerShell From a Browser to Manage Cloud Resources | Danny Maertens ||
 | Setting Up Your Own Private, Secured Package Repository - Why and How | Darwin Sanoy ||
-| Invoke-ChatOps: Level up and change your culture with chat and PowerShell | Brandon Olin ||
+| Invoke-ChatOps: Level up and change your culture with chat and PowerShell | [Brandon Olin](https://twitter.com/devblackops) | [Slides](https://speakerdeck.com/devblackops/invoke-chatops-level-up-and-change-your-culture-with-chat-and-powershell), [Repo](https://github.com/devblackops/pssummit2018-chatops) |
 | Documentation as User Experience | Michael T Lombardi ||
 | What's Cooking with PowerShell Core? | Maximo Trinidad ||
 
@@ -97,4 +97,9 @@ Various posts on the summit from the community:
 * [Joshua King](https://twitter.com/WindosNZ): [DAY TWO OF #PSHSUMMIT 2018 - GETTING SMART](https://king.geek.nz/2018/04/11/summit2018-day2/)
 * [Joshua King](https://twitter.com/WindosNZ): [DAY THREE OF #PSHSUMMIT 2018 - I DID THE THING](https://king.geek.nz/2018/04/12/summit2018-day3/)
 * [Joshua King](https://twitter.com/WindosNZ): [DAY FOUR OF #PSHSUMMIT 2018 - IRON SCRIPTER](https://king.geek.nz/2018/04/13/summit2018-day4/)
+* [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 1: The Arrival](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-1-the-arrival.html)
+* [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 2: I MET SNOVER](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-2-i-met-snover.html)
+* [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 3: Start of Sessions](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-3-start-of-sessions.html)
+* [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 4: Lee Holmes, Plaster and Chocolatey](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-4-lee-holmes-plaster-and-chocolatey.html)
+* [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 5: The End](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-5-the-end.html)
 * [Don Jones](https://twitter.com/concentrateddon): [A Summit 2018 Post-Mortem](https://powershell.org/2018/04/16/a-summit-2018-post-mortem/)
