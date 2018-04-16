@@ -33,7 +33,7 @@
 | PowerShell Team: Managing Server State using Configuration as Code | Michael Greene ||
 | Parameter Classes: Making parameter-binding user friendly | Friedrich Weinmann ||
 | Why you should embrace OpenSource. Jenkins-PowerShell-Containers | Gabriel Rojas ||
-| Whip Your Scripts into Shape: Optimizing PowerShell for Speed | Joshua King ||
+| Whip Your Scripts into Shape: Optimizing PowerShell for Speed | [Joshua King](https://twitter.com/WindosNZ) | [Repo (Slides, Code, and Misc)](https://github.com/Windos/Presentations/tree/master/PSHSummit%202018) |
 | Pesterize Your Code!! | James Arruda ||
 | Devops notes from the field | James O'Neill ||
 | OS Deployments useing WinPE + PowerShell and WindowsImageTools | David Jones ||
