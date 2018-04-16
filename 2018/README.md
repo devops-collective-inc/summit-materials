@@ -65,7 +65,7 @@
 | PowerShell Team: Using PowerShell From a Browser to Manage Cloud Resources | Danny Maertens ||
 | Setting Up Your Own Private, Secured Package Repository - Why and How | Darwin Sanoy ||
 | Invoke-ChatOps: Level up and change your culture with chat and PowerShell | Brandon Olin ||
-| Documentation as User Experience | Michael T Lombardi ||
+| Documentation as User Experience | [Michael T Lombardi](https://twitter.com/barbariankb) | [Slides](https://gitpitch.com/michaeltlombardi/documentarian/gitpitch?grs=gitlab#/), [Slide Source](https://gitlab.com/michaeltlombardi/documentarian/blob/gitpitch/), [SpeakerDeck](https://speakerdeck.com/michaeltlombardi/documentation-as-ux-rightfully-writing-the-right-things), [Project](https://gitlab.com/documentarian/documentarian), [Docs](http://documentarian.gitlab.io/documentarian/) |
 | What's Cooking with PowerShell Core? | Maximo Trinidad ||
 
 ## Community Lightning Demos
