@@ -58,7 +58,7 @@
 | Writing a DSL (Domain Specific Language) for PowerShell | Kevin Marquette ||
 | Get control of your Git: Managing PS module binaries using VSTS CI/CD and package management | Adam Murray ||
 | Code Writing Code, say what now! Meta Programming & PowerShell | Wesley Kirkland ||
-| How to Love Unit Testing | Brian Bunke ||
+| How to Love Unit Testing | [Brian Bunke](https://twitter.com/brianbunke) | [Slides](https://speakerdeck.com/brianbunke/how-to-love-unit-testing) / [Repo](https://github.com/brianbunke/PesterUnitTesting2018) |
 | Automate Problem Solving with PowerShell, Azure Automation, and OMS | Will Anderson ||
 | Building Cross Platform PowerShell Modules | Adam Driscoll ||
 | Script blocks decoded | Richard Siddaway ||
