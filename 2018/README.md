@@ -26,7 +26,7 @@
 | Define, Develop and Deploy DSC Resources | Jeff Hicks ||
 | Defending against PowerShell attacks – in theory, and in practice | Lee Holmes ||
 | PowerShell remoting - Installing and troubleshooting in a multiplatform environment | Anthony Nocentino • Richard Siddaway ||
-| Lean Coffee - Is that just decaf coffee with fat free milk? | Glenn Sarti ||
+| Lean Coffee - Is that just decaf coffee with fat free milk? | [Glenn Sarti](https://twitter.com/glennsarti) | [Slides and Misc](https://glennsarti.github.io/presentation/powershell-summit2018-leancoffee/) |
 | An opinionated DSC Solution, with tooling | Gael Colas ||
 | Getting started with Just Enough Administration (JEA) | Jason Helmick ||
 | PowerShell IoT - What .Net Core has done for your Raspberry Pi | Eli Hess ||
@@ -43,7 +43,7 @@
 | Accelerate Your Career and Others’ by Proving You’re a Badass! | Adam Bertram ||
 | The Build Release Pipeline Model for mere mortals | Ryan Coates ||
 | Securing your environment with Just Enough Administration | James Petty ||
-| Beyond Pester 101: Applying testing principles to PowerShell | Glenn Sarti ||
+| Beyond Pester 101: Applying testing principles to PowerShell | [Glenn Sarti](https://twitter.com/glennsarti) | [Slides and Misc](https://glennsarti.github.io/presentation/powershell-summit2018-pester/) |
 | PowerShell for SharePoint Online - How DevOps is making SharePoint Admins feel loved again | Rick Taylor ||
 | Recreate MOF based DSC resources as Class based DSC resources | Mike F Robbins ||
 | PowerShell Team: Inventory Your Server Environment and Detect Change at Scale | Jenny Hunter ||
