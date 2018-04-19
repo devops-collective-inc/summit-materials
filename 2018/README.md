@@ -56,7 +56,7 @@
 | WebJEA: PowerShell driven Web Forms for Secure Self-Service | Mark Domansky ||
 | Scripting Big Changes With Small Risk | Brad Sterkenburg ||
 | Writing a DSL (Domain Specific Language) for PowerShell | Kevin Marquette ||
-| Get control of your Git: Managing PS module binaries using VSTS CI/CD and package management | Adam Murray ||
+| Get control of your Git: Managing PS module binaries using VSTS CI/CD and package management | [Adam Murray](https://twitter.com/muzzar78) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/50/Summit2018%20-%20Get%20Control%20of%20your%20GIT%20v1.1.pptx) / [Plaster Repo](https://github.com/tikabu/TikabuPSModuleTemplate) / [Sample Module](https://github.com/tikabu/Summit2018) |
 | Code Writing Code, say what now! Meta Programming & PowerShell | Wesley Kirkland ||
 | How to Love Unit Testing | [Brian Bunke](https://twitter.com/brianbunke) | [Slides](https://speakerdeck.com/brianbunke/how-to-love-unit-testing) / [Repo](https://github.com/brianbunke/PesterUnitTesting2018) |
 | Automate Problem Solving with PowerShell, Azure Automation, and OMS | Will Anderson ||
