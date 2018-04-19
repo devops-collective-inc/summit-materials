@@ -104,3 +104,4 @@ Various posts on the summit from the community:
 * [Joshua King](https://twitter.com/WindosNZ): [DAY THREE OF #PSHSUMMIT 2018 - I DID THE THING](https://king.geek.nz/2018/04/12/summit2018-day3/)
 * [Joshua King](https://twitter.com/WindosNZ): [DAY FOUR OF #PSHSUMMIT 2018 - IRON SCRIPTER](https://king.geek.nz/2018/04/13/summit2018-day4/)
 * [Joshua King](https://twitter.com/WindosNZ): [A QUICK LOOK BACK AT #PSHSUMMIT 2018](https://king.geek.nz/2018/04/17/summit2018-hindsight/)
+* [Mike Kanakos](https://twitter.com/MikeKanakos): [PowerShell Summit 2018 recap](https://4sysops.com/archives/powershell-summit-2018-recap/)
