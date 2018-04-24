@@ -93,6 +93,7 @@
 
 Various posts on the summit from the community:
 
+* [Andrew Pla](https://twitter.com/PlaAndrew22): [Powershell Summit = Expectations Exceeded](https://andrewpla.github.io/PowerShell-Summit-=-Expectations-Exceeded/)
 * [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 1: The Arrival](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-1-the-arrival.html)
 * [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 2: I MET SNOVER](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-2-i-met-snover.html)
 * [Dan Franciscus](https://twitter.com/dan_franciscus): [My PowerShell Summit Experience – Part 3: Start of Sessions](https://winsysblog.com/2018/04/my-powershell-summit-experience-part-3-start-of-sessions.html)
