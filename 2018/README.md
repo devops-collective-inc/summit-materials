@@ -12,7 +12,7 @@
 | Become a PowerShell Debugging Ninja | [Kirk Munro](https://twitter.com/poshoholic) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/64/debugging.pptx) and [scripts](https://github.com/KirkMunro/debugging-powershell-session). |
 | Deploy Infrastructure As A Service with Azure Resource Manager Templates | Will Anderson ||
 | Time to Use Regular Expressions More, Um, Regularly | Mark Minasi ||
-| Writing award winning PowerShell functions and script modules | Mike F Robbins ||
+| Writing award winning PowerShell functions and script modules | [Mike F Robbins](https://twitter.com/mikefrobbins) | [Code and Slides](https://github.com/mikefrobbins/Presentations) |
 | Building cmdlets for a REST API with PowerShell classes, Azure-based integration tests and continuous deployment | Jeremy Murrah | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/db/Presentation.pptx) |
 | Building PowerShell applications that operate on a Planetary scale | Justin Sider ||
 | DSC vs. "The Others" - A Song of Configuration Management | Missy Januszko | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/d4/DSC%20vs.%20Others.pptx) |
@@ -45,7 +45,7 @@
 | Securing your environment with Just Enough Administration | James Petty | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/3c/JEA-PPT.pptx) |
 | Beyond Pester 101: Applying testing principles to PowerShell | [Glenn Sarti](https://twitter.com/glennsarti) | [Slides and Misc](https://glennsarti.github.io/presentation/powershell-summit2018-pester/) |
 | PowerShell for SharePoint Online - How DevOps is making SharePoint Admins feel loved again | Rick Taylor ||
-| Recreate MOF based DSC resources as Class based DSC resources | Mike F Robbins ||
+| Recreate MOF based DSC resources as Class based DSC resources | [Mike F Robbins](https://twitter.com/mikefrobbins) | [Code and Slides](https://github.com/mikefrobbins/Presentations) |
 | PowerShell Team: Inventory Your Server Environment and Detect Change at Scale | Jenny Hunter ||
 | Managing Advanced DSC Configurations and Configuration Data | Jason Helmick ||
 | CSV, JSON and XML (Oh My!) | Jeff Hicks ||
