@@ -9,7 +9,7 @@
 | PowerShell Team Leadership Session | PowerShell Team ||
 | A Historical Architectural Tour of PowerShell | Bruce Payette ||
 | Be the Master | Don Jones ||
-| Become a PowerShell Debugging Ninja | Kirk Munro | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/64/debugging.pptx) |
+| Become a PowerShell Debugging Ninja | [Kirk Munro](https://twitter.com/poshoholic) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/64/debugging.pptx) and [scripts](https://github.com/KirkMunro/debugging-powershell-session). |
 | Deploy Infrastructure As A Service with Azure Resource Manager Templates | Will Anderson ||
 | Time to Use Regular Expressions More, Um, Regularly | Mark Minasi ||
 | Writing award winning PowerShell functions and script modules | Mike F Robbins ||
