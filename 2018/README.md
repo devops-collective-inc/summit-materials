@@ -60,7 +60,7 @@
 | Code Writing Code, say what now! Meta Programming & PowerShell | Wesley Kirkland ||
 | How to Love Unit Testing | [Brian Bunke](https://twitter.com/brianbunke) | [Slides](https://speakerdeck.com/brianbunke/how-to-love-unit-testing) / [Repo](https://github.com/brianbunke/PesterUnitTesting2018) |
 | Automate Problem Solving with PowerShell, Azure Automation, and OMS | Will Anderson ||
-| Building Cross Platform PowerShell Modules | Adam Driscoll | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/1c/Cross%20Platform%20PowerShell%20Modules.pptx) |
+| Building Cross Platform PowerShell Modules | [Adam Driscoll](https://twitter.com/adamdriscoll) | [Code and Slides](https://github.com/adamdriscoll/Presentations/tree/master/PowerShell%20Summit%20-%202018) |
 | Script blocks decoded | Richard Siddaway ||
 | PowerShell Team: Using PowerShell From a Browser to Manage Cloud Resources | Danny Maertens ||
 | Setting Up Your Own Private, Secured Package Repository - Why and How | Darwin Sanoy | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/64/PowerShell%20and%20DevOps%20Summit%202018%20-%20Your%20Own%20Private%2C%20Secure%20Repository.pdf) |
