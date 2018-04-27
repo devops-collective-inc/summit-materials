@@ -25,7 +25,7 @@
 | PlatyPS: PowerShell Help meets Markdown | Sergei Vorobev | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/74/platyPS.pptx) |
 | Define, Develop and Deploy DSC Resources | Jeff Hicks ||
 | Defending against PowerShell attacks – in theory, and in practice | Lee Holmes ||
-| PowerShell remoting - Installing and troubleshooting in a multiplatform environment | Anthony Nocentino • Richard Siddaway | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/fb/PowerShell%20Remoting%20-%20Installing%20and%20troubleshooting%20in%20a%20multiplatform%20environment%20-%20OpenSSH%20-%20Anthony%20Nocentino.zip) |
+| PowerShell remoting - Installing and troubleshooting in a multiplatform environment | Anthony Nocentino • Richard Siddaway | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/fb/PowerShell%20Remoting%20-%20Installing%20and%20troubleshooting%20in%20a%20multiplatform%20environment%20-%20OpenSSH%20-%20Anthony%20Nocentino.zip), [repo](https://github.com/RichardSiddaway/Summit2018TroubleShootingRemoting) |
 | Lean Coffee - Is that just decaf coffee with fat free milk? | [Glenn Sarti](https://twitter.com/glennsarti) | [Slides and Misc](https://glennsarti.github.io/presentation/powershell-summit2018-leancoffee/) |
 | An opinionated DSC Solution, with tooling | Gael Colas ||
 | Getting started with Just Enough Administration (JEA) | Jason Helmick ||
