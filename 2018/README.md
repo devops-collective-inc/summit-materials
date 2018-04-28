@@ -13,7 +13,7 @@
 | Deploy Infrastructure As A Service with Azure Resource Manager Templates | Will Anderson ||
 | Time to Use Regular Expressions More, Um, Regularly | Mark Minasi ||
 | Writing award winning PowerShell functions and script modules | [Mike F Robbins](https://twitter.com/mikefrobbins) | [Code and Slides](https://github.com/mikefrobbins/Presentations) |
-| Building cmdlets for a REST API with PowerShell classes, Azure-based integration tests and continuous deployment | Jeremy Murrah | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/db/Presentation.pptx) |
+| Building cmdlets for a REST API with PowerShell classes, Azure-based integration tests and continuous deployment | [Jeremy Murrah](https://twitter.com/murrahjm) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/db/Presentation.pptx) and [Code](https://github.com/murrahjm/PSSummit2018) |
 | Building PowerShell applications that operate on a Planetary scale | Justin Sider ||
 | DSC vs. "The Others" - A Song of Configuration Management | Missy Januszko | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/d4/DSC%20vs.%20Others.pptx) |
 | One MOF to rule them all, and in the Azure bind them | Jacob Morrison | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/05/One-MOF.pptx) |
