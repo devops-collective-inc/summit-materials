@@ -21,7 +21,7 @@
 | OpenSSH Internals for PowerShell Pros | Anthony Nocentino | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/74/OpenSSH%20Internals%20for%20PowerShell%20Pros.zip) |
 | Connecting the Dots with PowerShell | [Warren Frame](https://twitter.com/psCookieMonster) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/a8/dots.pptx), [Repo](https://github.com/RamblingCookieMonster/Dots) |
 | PowerShell Team: PowerShell Core | Joey Aiello ||
-| The Ins and Outs of planning a PowerShell Saturday | James Petty ||
+| The Ins and Outs of planning a PowerShell Saturday | [James Petty](https://twitter.com/psjamesp) ||
 | PlatyPS: PowerShell Help meets Markdown | Sergei Vorobev | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/74/platyPS.pptx) |
 | Define, Develop and Deploy DSC Resources | Jeff Hicks ||
 | Defending against PowerShell attacks – in theory, and in practice | Lee Holmes ||
@@ -42,7 +42,7 @@
 | Creating PowerShell Projects and more with Plaster | Rob Pleau ||
 | Accelerate Your Career and Others’ by Proving You’re a Badass! | Adam Bertram ||
 | The Build Release Pipeline Model for mere mortals | Ryan Coates | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/9d/psh18-trpm.pptx) |
-| Securing your environment with Just Enough Administration | James Petty | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/3c/JEA-PPT.pptx) |
+| Securing your environment with Just Enough Administration | [James Petty](https://twitter.com/psjamesp) | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/3c/JEA-PPT.pptx) , [Repo](https://github.com/psjamesp/Presentations) |
 | Beyond Pester 101: Applying testing principles to PowerShell | [Glenn Sarti](https://twitter.com/glennsarti) | [Slides and Misc](https://glennsarti.github.io/presentation/powershell-summit2018-pester/) |
 | PowerShell for SharePoint Online - How DevOps is making SharePoint Admins feel loved again | Rick Taylor ||
 | Recreate MOF based DSC resources as Class based DSC resources | [Mike F Robbins](https://twitter.com/mikefrobbins) | [Code and Slides](https://github.com/mikefrobbins/Presentations) |
