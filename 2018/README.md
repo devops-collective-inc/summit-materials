@@ -63,7 +63,7 @@
 | Building Cross Platform PowerShell Modules | [Adam Driscoll](https://twitter.com/adamdriscoll) | [Code and Slides](https://github.com/adamdriscoll/Presentations/tree/master/PowerShell%20Summit%20-%202018) |
 | Script blocks decoded | Richard Siddaway ||
 | PowerShell Team: Using PowerShell From a Browser to Manage Cloud Resources | Danny Maertens ||
-| Setting Up Your Own Private, Secured Package Repository - Why and How | [Darwin Sanoy](https://twitter.com/DarwinTheorizes) [Blog](https://cloudywindows.io) | [slides & code repo](https://github.com/DarwinJS/PowerShellDevOpsSummit2018) |
+| Setting Up Your Own Private, Secured Package Repository - Why and How | [Darwin Sanoy](https://twitter.com/DarwinTheorizes) ([Blog](https://cloudywindows.io)) | [slides & code repo](https://github.com/DarwinJS/PowerShellDevOpsSummit2018) |
 | Invoke-ChatOps: Level up and change your culture with chat and PowerShell | [Brandon Olin](https://twitter.com/devblackops) | [Slides](https://speakerdeck.com/devblackops/invoke-chatops-level-up-and-change-your-culture-with-chat-and-powershell), [Repo](https://github.com/devblackops/pssummit2018-chatops) |
 | Documentation as User Experience | [Michael T Lombardi](https://twitter.com/barbariankb) | [Slides](https://gitpitch.com/michaeltlombardi/documentarian/gitpitch?grs=gitlab#/), [Slide Source](https://gitlab.com/michaeltlombardi/documentarian/blob/gitpitch/), [SpeakerDeck](https://speakerdeck.com/michaeltlombardi/documentation-as-ux-rightfully-writing-the-right-things), [Project](https://gitlab.com/documentarian/documentarian), [Docs](http://documentarian.gitlab.io/documentarian/) |
 | What's Cooking with PowerShell Core? | Maximo Trinidad ||
