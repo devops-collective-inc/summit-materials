@@ -1,5 +1,7 @@
 # PowerShell + Devops Global Summit 2018
 
+* [Youtube Playlist](https://www.youtube.com/playlist?list=PLfeA8kIs7CocGXuezOoYtLRdnK9S_Mq3e)
+
 ## Traditional Sessions
 
 | Topic | Presenter(s) | Materials |
