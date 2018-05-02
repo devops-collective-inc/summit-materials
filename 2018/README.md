@@ -29,7 +29,7 @@
 | Lean Coffee - Is that just decaf coffee with fat free milk? | [Glenn Sarti](https://twitter.com/glennsarti) | [Slides and Misc](https://glennsarti.github.io/presentation/powershell-summit2018-leancoffee/) |
 | An opinionated DSC Solution, with tooling | Gael Colas ||
 | Getting started with Just Enough Administration (JEA) | Jason Helmick ||
-| PowerShell IoT - What .Net Core has done for your Raspberry Pi | Eli Hess | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/11/PoshberryPi.pptx) |
+| PowerShell IoT - What .Net Core has done for your Raspberry Pi | [Eli Hess](https://twitter.com/eshess) | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/11/PoshberryPi.pptx), [repo](https://github.com/eshess/SummitPresentation2018) |
 | PowerShell Team: Managing Server State using Configuration as Code | Michael Greene ||
 | Parameter Classes: Making parameter-binding user friendly | Friedrich Weinmann | [slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/05/Parameter%20Classes.pptx) |
 | Why you should embrace OpenSource. Jenkins-PowerShell-Containers | Gabriel Rojas ||
