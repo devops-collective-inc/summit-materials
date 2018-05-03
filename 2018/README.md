@@ -63,7 +63,7 @@
 | How to Love Unit Testing | [Brian Bunke](https://twitter.com/brianbunke) | [Slides](https://speakerdeck.com/brianbunke/how-to-love-unit-testing) / [Repo](https://github.com/brianbunke/PesterUnitTesting2018) |
 | Automate Problem Solving with PowerShell, Azure Automation, and OMS | Will Anderson ||
 | Building Cross Platform PowerShell Modules | [Adam Driscoll](https://twitter.com/adamdriscoll) | [Code and Slides](https://github.com/adamdriscoll/Presentations/tree/master/PowerShell%20Summit%20-%202018) |
-| Script blocks decoded | Richard Siddaway ||
+| Script blocks decoded | Richard Siddaway | [repo](https://github.com/RichardSiddaway/Summit2018ScriptBlocksDecoded) |
 | PowerShell Team: Using PowerShell From a Browser to Manage Cloud Resources | Danny Maertens ||
 | Setting Up Your Own Private, Secured Package Repository - Why and How | [Darwin Sanoy](https://twitter.com/DarwinTheorizes) ([Blog](https://cloudywindows.io)) | [slides & code repo](https://github.com/DarwinJS/PowerShellDevOpsSummit2018) |
 | Invoke-ChatOps: Level up and change your culture with chat and PowerShell | [Brandon Olin](https://twitter.com/devblackops) | [Slides](https://speakerdeck.com/devblackops/invoke-chatops-level-up-and-change-your-culture-with-chat-and-powershell), [Repo](https://github.com/devblackops/pssummit2018-chatops) |
