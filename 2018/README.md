@@ -13,7 +13,7 @@
 | Be the Master | Don Jones ||
 | Become a PowerShell Debugging Ninja | [Kirk Munro](https://twitter.com/poshoholic) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/64/debugging.pptx) and [scripts](https://github.com/KirkMunro/debugging-powershell-session). |
 | Deploy Infrastructure As A Service with Azure Resource Manager Templates | Will Anderson ||
-| Time to Use Regular Expressions More, Um, Regularly | Mark Minasi | [slides](2018/content/minasi-regex.pptx) |
+| Time to Use Regular Expressions More, Um, Regularly | Mark Minasi | [slides](content/minasi-regex.pptx) |
 | Writing award winning PowerShell functions and script modules | [Mike F Robbins](https://twitter.com/mikefrobbins) | [Code and Slides](https://github.com/mikefrobbins/Presentations) |
 | Building cmdlets for a REST API with PowerShell classes, Azure-based integration tests and continuous deployment | [Jeremy Murrah](https://twitter.com/murrahjm) | [Slides](https://schd.ws/hosted_files/powershelldevopsglobalsummit2018/db/Presentation.pptx) and [Code](https://github.com/murrahjm/PSSummit2018) |
 | Building PowerShell applications that operate on a Planetary scale | Justin Sider ||
