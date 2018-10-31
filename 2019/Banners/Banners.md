@@ -4,7 +4,7 @@ Banners to be used for speakers and attendees
 
 ## Speakers
 
-!(summit_Speaking.jpg)
+![](summit_Speaking.jpg)
 
 
 ## Attendes
