@@ -7,6 +7,6 @@ Are you speaking at the 2019 Summit. We would love it if you would promote the e
 
 ![](summit_Speaking.jpg)
 
-## Attendes
+## Attendees
 If you are attending Summit 2019? Then is banner is for you. Feel free to use it on social media and on your blog. 
 ![](summit_Attending.jpg)
