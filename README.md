@@ -4,6 +4,7 @@ PowerShell + DevOps Global Summit Materials from traditional sessions, lightning
 
 ## Materials
 
+* [2019 PowerShell + DevOps Global Summit](2019)
 * [2018 PowerShell + DevOps Global Summit](2018)
 * [2017 PowerShell + DevOps Global Summit](2017)
 
