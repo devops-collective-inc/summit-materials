@@ -18,7 +18,7 @@
 | Firewall Evasion and Remote Access with OpenSSH                                                | Anthony Nocentino          |           |
 | Sipping psake: Creating a Build and Release Pipeline for PowerShell                            | Brandon Olin               |           |
 | Demystifying Microsoft's Cloud Automation products                                             | Jaap Brasser               |           |
-| It’s PowerShell In the Cloud – Welcome to Azure Cloud Shell                                    | Michael Bender             |           |
+| It’s PowerShell In the Cloud – Welcome to Azure Cloud Shell                                    | [Michael Bender](https://twitter.com/michaelbender)             |  [Scripts & Slides](https://github.com/themichaelbender-ms/azure-cloud-shell)         |
 | Doctor, Don't Defenestrate: What to Do with Legacy Scripts                                     | Michael T Lombardi         |           |
 | Moving Up the Monitoring Stack                                                                 | Steven Murawski            |           |
 | PowerShell Remoting Internals                                                                  | Paul Higinbotham           |           |
