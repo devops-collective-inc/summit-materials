@@ -36,7 +36,7 @@
 | Reporting on Server Compliance with DSCv2: Guest Configuration                                 | Michael Greene             |           |
 | Unleash your PowerShell with AWS Lambda and Serverless Computing                               | Andrew Pearce              |           |
 | Deep Web: A Web Cmdlets Deep Dive                                                              | Mark Kraus                 |           |
-| Ansible for the Windows Admin                                                                  | Jeremy Murrah              |           |
+| Ansible for the Windows Admin                                                                  | [Jeremy Murrah](https://murrahjm.github.io/)              |     [slides and code](https://github.com/murrahjm/PSSummit2019)      |
 | Machine Learning Algorithms with H2o and PowerShell                                            | Tome Tanasovski            |           |
 | CypherDog2.0 - Bloodhound Dog Whispering with PowerShell                                       | Walter Legowski            |           |
 | Life after "git push"                                                                          | Steven Murawski            |           |
