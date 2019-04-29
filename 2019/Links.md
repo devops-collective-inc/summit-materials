@@ -1,5 +1,8 @@
 # Important Details
 
+SSID: PSHSummit
+Password: Summit2019
+
 | What | Where |
 | ---- | ----- |
 | Get the agenda app | https://bit.ly/summit2019app |
