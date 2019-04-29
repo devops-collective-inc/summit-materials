@@ -13,5 +13,6 @@ Password: Summit2019
 | Various tips on the summit | Slack #Tips |
 | Send photos you take at the summit | photos@powershell.org |
 | View photos from the summit | https://bit.ly/SummitPhotos19 |
+| Tweet about the summit | [#pshsummit](https://twitter.com/search?q=%23pshsummit) |
 
 Please be sure to get the agenda app - Socio's website will not let you evaluate a session or plan a schedule
