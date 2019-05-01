@@ -28,7 +28,7 @@
 | Beyond Pester 102: Acceptance testing with PowerShell                                          | Glenn Sarti                |           |
 | Malicious Payloads vs Deep Visibility: A PowerShell Story                                      | Daniel Bohannon            |           |
 | Unexplained phenomena: powerful tricks you likely didn't know were even possible               | Kirk Munro                 |           |
-| Completely Automate Managing Windows Software...Forever                                        | Daniel Franciscus          |           |
+| Completely Automate Managing Windows Software...Forever                                        | Daniel Franciscus          | [Scripts & Slides](https://github.com/dfranciscus/PSSummit2019)          |
 | Automate All The Things–Where To Start And Where To Go?                                        | Chris Hunt                 |           |
 | PSCache - simple strategies for magnificent performance                                        | Mathias Jessen             |           |
 | Bullet-proofing: Patterns & Practices for survivable advanced functions and scripts            | Joel “Jaykul” Bennett      |           |
