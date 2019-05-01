@@ -10,7 +10,7 @@
 | Software Development in an Age of Social Responsibility                                        | Jeffrey Snover             |           |
 | Adulting 101                                                                                   | Lee Holmes                 |           |
 | The Ubiquity of PowerShell in Microsoft Technology                                             | Joey Aiello,Michael Greene |           |
-| Securing PowerShell: Hands-On Lab                                                              | Ashley McGlone             |           |
+| Securing PowerShell: Hands-On Lab                                                              | [Ashley McGlone](https://twitter.com/GoateePFE)             | [Lab Guide and Scripts](https://github.com/GoateePFE/PowerShellSummit2019) |
 | Introduction to Serverless Functions                                                           | [Kirk Munro](https://twitter.com/poshoholic) | [Slides](https://github.com/KirkMunro/serverless-session/blob/master/introduction-to-serverless-functions.pptx) |
 | PowerShell Universal Dashboard from start to finish                                            | Adam Driscoll              |           |
 | Writing Compiled PowerShell Cmdlets                                                            | Thomas Rayner              |           |
