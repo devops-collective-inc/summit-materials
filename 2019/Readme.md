@@ -44,7 +44,7 @@
 | Using VSCode as Your Default PowerShell Editor                                                 | Tyler Leonhardt            |           |
 | Using PowerShell in a Cross Platform World                                                     | William Hurt               |           |
 | Containers - You Better Get on Board                                                           | Anthony Nocentino          |           |
-| Don't do that, do this instead: PowerShell worst practices and how to solve them               | Chris Gardner              |           |
+| Don't do that, do this instead: PowerShell worst practices and how to solve them               | [Chris Gardner](https://chrislgardner.github.io)              |  [slides](https://github.com/ChrisLGardner/presentations)      |
 | Better Ops Together: Practical PowerShell Pair Programming Patterns and Practices with VS Code | Mark Kraus                 |           |
 | Dungeons & Dragons & Development: How Playing Games Makes You a Better IT Pro                  | Michael T Lombardi         |           |
 | Demystifying Terraform - "Hardcore" to Core Infrastructure-as-Code Tool                        | Chris Hunt                 |           |
