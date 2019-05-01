@@ -11,7 +11,7 @@
 | Adulting 101                                                                                   | Lee Holmes                 |           |
 | The Ubiquity of PowerShell in Microsoft Technology                                             | Joey Aiello,Michael Greene |           |
 | Securing PowerShell: Hands-On Lab                                                              | Ashley McGlone             |           |
-| Introduction to Serverless Functions                                                           | Kirk Munro                 |           |
+| Introduction to Serverless Functions                                                           | [Kirk Munro](https://twitter.com/poshoholic) | [Slides](https://github.com/KirkMunro/serverless-session/blob/master/introduction-to-serverless-functions.pptx) |
 | PowerShell Universal Dashboard from start to finish                                            | Adam Driscoll              |           |
 | Writing Compiled PowerShell Cmdlets                                                            | Thomas Rayner              |           |
 | Parselmouth - bending the PowerShell language                                                  | Mathias Jessen             |           |
@@ -27,7 +27,7 @@
 | Logging in a DevOps world                                                                      | Friedrich Weinmann         |           |
 | Beyond Pester 102: Acceptance testing with PowerShell                                          | Glenn Sarti                |           |
 | Malicious Payloads vs Deep Visibility: A PowerShell Story                                      | Daniel Bohannon            |           |
-| Unexplained phenomena: powerful tricks you likely didn't know were even possible               | Kirk Munro                 |           |
+| Unexplained phenomena: powerful tricks you likely didn't know were even possible               | [Kirk Munro](https://twitter.com/poshoholic) |           |
 | Completely Automate Managing Windows Software...Forever                                        | Daniel Franciscus          | [Scripts & Slides](https://github.com/dfranciscus/PSSummit2019)          |
 | Automate All The Things–Where To Start And Where To Go?                                        | Chris Hunt                 |           |
 | PSCache - simple strategies for magnificent performance                                        | Mathias Jessen             |           |
