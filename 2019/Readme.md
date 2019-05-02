@@ -29,7 +29,7 @@
 | Malicious Payloads vs Deep Visibility: A PowerShell Story                                      | Daniel Bohannon            |           |
 | Unexplained phenomena: powerful tricks you likely didn't know were even possible               | [Kirk Munro](https://twitter.com/poshoholic) |           |
 | Completely Automate Managing Windows Software...Forever                                        | Daniel Franciscus          | [Scripts & Slides](https://github.com/dfranciscus/PSSummit2019)          |
-| Automate All The Things–Where To Start And Where To Go?                                        | Chris Hunt                 |           |
+| Automate All The Things–Where To Start And Where To Go?                                        | [Chris Hunt](https://twitter.com/LogicalDiagram)                 |  [Slides](https://docs.google.com/presentation/d/12QwL8dHJ2qIaWYCycCnvGnXhZE5CXE7DEkeXVnkOCE4/edit?usp=sharing)         |
 | PSCache - simple strategies for magnificent performance                                        | Mathias Jessen             |           |
 | Bullet-proofing: Patterns & Practices for survivable advanced functions and scripts            | Joel “Jaykul” Bennett      |           |
 | Publishing and Managing Modules in an Internal Repository                                      | Kevin Marquette            |           |
@@ -47,7 +47,7 @@
 | Don't do that, do this instead: PowerShell worst practices and how to solve them               | [Chris Gardner](https://chrislgardner.github.io)              |  [slides](https://github.com/ChrisLGardner/presentations)      |
 | Better Ops Together: Practical PowerShell Pair Programming Patterns and Practices with VS Code | Mark Kraus                 |           |
 | Dungeons & Dragons & Development: How Playing Games Makes You a Better IT Pro                  | Michael T Lombardi         |           |
-| Demystifying Terraform - "Hardcore" to Core Infrastructure-as-Code Tool                        | Chris Hunt                 |           |
+| Demystifying Terraform - "Hardcore" to Core Infrastructure-as-Code Tool                        | [Chris Hunt](https://twitter.com/LogicalDiagram)                 | [Slides and Code](https://github.com/cdhunt/pssummit2019-terraform)          |
 | PesterSec: Using Pester & ScriptAnalyzer for Detecting Obfuscated PowerShell                   | Daniel Bohannon            |           |
 | PowerShell + AutoRest + Swagger = Instant Modules                                              | Adam Murray                |           |
 | PowerShell Error and Event Collection at Scale                                                 | Dakota Clark               |           |
