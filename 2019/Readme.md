@@ -51,7 +51,7 @@
 | PesterSec: Using Pester & ScriptAnalyzer for Detecting Obfuscated PowerShell                   | Daniel Bohannon            |           |
 | PowerShell + AutoRest + Swagger = Instant Modules                                              | Adam Murray                |           |
 | PowerShell Error and Event Collection at Scale                                                 | Dakota Clark               |           |
-| Going Core with VMware PowerCLI!                                                               | Luc Dekens                 |           |
+| Going Core with VMware PowerCLI!                                                               | [Luc Dekens](https://twitter.com/LucD22)              |  [slides](https://github.com/lucdekens/Presentations/blob/master/PowerShell_and_DevOps_Summit_2019/PowerCLI_goes_Core.pptx)                  |           |
 | Automating Active Directory Health Checks                                                      | Mike Kanakos               |           |
 | Working with PSGraph                                                                           | Kevin Marquette            |           |
 | Testing, Testing, 1...2...3: Using Pester for Infrastructure Validation                        | Brandon Olin               |           |
