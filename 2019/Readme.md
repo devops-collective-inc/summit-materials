@@ -32,7 +32,7 @@
 | Automate All The Things–Where To Start And Where To Go?                                        | [Chris Hunt](https://twitter.com/LogicalDiagram)                 |  [Slides](https://docs.google.com/presentation/d/12QwL8dHJ2qIaWYCycCnvGnXhZE5CXE7DEkeXVnkOCE4/edit?usp=sharing)         |
 | PSCache - simple strategies for magnificent performance                                        | Mathias Jessen             |           |
 | Bullet-proofing: Patterns & Practices for survivable advanced functions and scripts            | Joel “Jaykul” Bennett      |           |
-| Publishing and Managing Modules in an Internal Repository                                      | Kevin Marquette            |           |
+| Publishing and Managing Modules in an Internal Repository                                      | [Kevin Marquette](https://twitter.com/KevinMarquette)            |  [Slides and code](https://github.com/KevinMarquette/ManagingModulesPresentation/tree/PSHSummit2019)         |
 | Reporting on Server Compliance with DSCv2: Guest Configuration                                 | Michael Greene             |           |
 | Unleash your PowerShell with AWS Lambda and Serverless Computing                               | Andrew Pearce              |           |
 | Deep Web: A Web Cmdlets Deep Dive                                                              | [Mark Kraus](https://twitter.com/markekraus)                 | [slides and code](https://github.com/markekraus/Deep-Web-Web-Cmdlets-Presentation)          |
@@ -53,7 +53,7 @@
 | PowerShell Error and Event Collection at Scale                                                 | Dakota Clark               |           |
 | Going Core with VMware PowerCLI!                                                               | Luc Dekens                 |           |
 | Automating Active Directory Health Checks                                                      | Mike Kanakos               |           |
-| Working with PSGraph                                                                           | Kevin Marquette            |           |
+| Working with PSGraph                                                                           | [Kevin Marquette](https://twitter.com/KevinMarquette)            | [Slides and Code](https://github.com/KevinMarquette/PSGraphPresentation/tree/pshsummit2019)          |
 | Testing, Testing, 1...2...3: Using Pester for Infrastructure Validation                        | Brandon Olin               |           |
 | Using PowerShell Core to automate application packaging, deployment and updates with Habitat   | Matt Wrock                 |           |
 | Finding Performance Bottlenecks with PowerShell                                                | Mike F. Robbins            |           |
