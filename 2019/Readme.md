@@ -35,7 +35,7 @@
 | Publishing and Managing Modules in an Internal Repository                                      | Kevin Marquette            |           |
 | Reporting on Server Compliance with DSCv2: Guest Configuration                                 | Michael Greene             |           |
 | Unleash your PowerShell with AWS Lambda and Serverless Computing                               | Andrew Pearce              |           |
-| Deep Web: A Web Cmdlets Deep Dive                                                              | Mark Kraus                 |           |
+| Deep Web: A Web Cmdlets Deep Dive                                                              | [Mark Kraus](https://twitter.com/markekraus)                 | [slides and code](https://github.com/markekraus/Deep-Web-Web-Cmdlets-Presentation)          |
 | Ansible for the Windows Admin                                                                  | [Jeremy Murrah](https://murrahjm.github.io/)              |     [slides and code](https://github.com/murrahjm/PSSummit2019)      |
 | Machine Learning Algorithms with H2o and PowerShell                                            | Tome Tanasovski            |           |
 | CypherDog2.0 - Bloodhound Dog Whispering with PowerShell                                       | Walter Legowski            |           |
