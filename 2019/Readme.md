@@ -25,7 +25,7 @@
 | Continuously deploying SQL code using Powershell                                               | Kirill Kravtsov            |           |
 | PSScriptAnalyzer: Overview, Advanced Usage, Customisation, Formatting and VS-Code integration  | Christoph Bergmeister      |           |
 | Logging in a DevOps world                                                                      | Friedrich Weinmann         |           |
-| Beyond Pester 102: Acceptance testing with PowerShell                                          | Glenn Sarti                |           |
+| Beyond Pester 102: Acceptance testing with PowerShell                                          | [Glenn Sarti](https://glennsarti.github.io/) | [Slides and Code](https://glennsarti.github.io/presentation/powershell-summit2019-pester/) |
 | Malicious Payloads vs Deep Visibility: A PowerShell Story                                      | Daniel Bohannon            |           |
 | Unexplained phenomena: powerful tricks you likely didn't know were even possible               | [Kirk Munro](https://twitter.com/poshoholic) |           |
 | Completely Automate Managing Windows Software...Forever                                        | Daniel Franciscus          | [Scripts & Slides](https://github.com/dfranciscus/PSSummit2019)          |
@@ -40,7 +40,7 @@
 | Machine Learning Algorithms with H2o and PowerShell                                            | Tome Tanasovski            |           |
 | CypherDog2.0 - Bloodhound Dog Whispering with PowerShell                                       | Walter Legowski            |           |
 | Life after "git push"                                                                          | Steven Murawski            |           |
-| How to become a SHiPS wright - Building with SHiPS                                             | Glenn Sarti                |           |
+| How to become a SHiPS wright - Building with SHiPS                                             | [Glenn Sarti](https://glennsarti.github.io/) | [Slides and Code](https://glennsarti.github.io/presentation/powershell-summit2019-ships/)   |
 | Using VSCode as Your Default PowerShell Editor                                                 | Tyler Leonhardt            |           |
 | Using PowerShell in a Cross Platform World                                                     | William Hurt               |           |
 | Containers - You Better Get on Board                                                           | Anthony Nocentino          |           |
