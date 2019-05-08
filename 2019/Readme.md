@@ -12,7 +12,7 @@
 | The Ubiquity of PowerShell in Microsoft Technology                                             | Joey Aiello,Michael Greene |           |
 | Securing PowerShell: Hands-On Lab                                                              | [Ashley McGlone](https://twitter.com/GoateePFE)             | [Lab Guide and Scripts](https://github.com/GoateePFE/PowerShellSummit2019) |
 | Introduction to Serverless Functions                                                           | [Kirk Munro](https://twitter.com/poshoholic) | [Slides](https://github.com/KirkMunro/serverless-session/blob/master/introduction-to-serverless-functions.pptx) |
-| PowerShell Universal Dashboard from start to finish                                            | Adam Driscoll              |           |
+| PowerShell Universal Dashboard from start to finish                                            | Adam Driscoll              |  [Scripts and Slides](https://github.com/adamdriscoll/Presentations/tree/master/PowerShell%20Summit%20-%202019)         |
 | Writing Compiled PowerShell Cmdlets                                                            | Thomas Rayner              |           |
 | Parselmouth - bending the PowerShell language                                                  | Mathias Jessen             |           |
 | Firewall Evasion and Remote Access with OpenSSH                                                | Anthony Nocentino          |           |
