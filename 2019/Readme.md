@@ -17,7 +17,7 @@
 | Parselmouth - bending the PowerShell language                                                  | Mathias Jessen             |           |
 | Firewall Evasion and Remote Access with OpenSSH                                                | Anthony Nocentino          |           |
 | Sipping psake: Creating a Build and Release Pipeline for PowerShell                            | Brandon Olin               |           |
-| Demystifying Microsoft's Cloud Automation products                                             | Jaap Brasser               |           |
+| Demystifying Microsoft's Cloud Automation products                                             | [Jaap Brasser](https://twitter.com/jaap_brasser) | [Slides and Code](https://github.com/jaapbrasser/Events/tree/master/2019-04-29%20PowerShell%20%2B%20DevOps%20Summit) |
 | It’s PowerShell In the Cloud – Welcome to Azure Cloud Shell                                    | [Michael Bender](https://twitter.com/michaelbender)             |  [Scripts & Slides](https://github.com/themichaelbender-ms/azure-cloud-shell)         |
 | Doctor, Don't Defenestrate: What to Do with Legacy Scripts                                     | [Michael T Lombardi](https://twitter.com/barbariankb) | [Slides](https://gitpitch.com/michaeltlombardi/talks?p=doctor-dont-defenestrate#/), [Slides with notes](https://gitpitch.com/michaeltlombardi/talks?p=doctor-dont-defenestrate&n=true#/) |
 | Moving Up the Monitoring Stack                                                                 | Steven Murawski            |           |
