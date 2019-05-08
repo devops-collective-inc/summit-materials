@@ -24,14 +24,14 @@
 | PowerShell Remoting Internals                                                                  | Paul Higinbotham           |           |
 | Continuously deploying SQL code using Powershell                                               | Kirill Kravtsov            |           |
 | PSScriptAnalyzer: Overview, Advanced Usage, Customisation, Formatting and VS-Code integration  | Christoph Bergmeister      |           |
-| Logging in a DevOps world                                                                      | Friedrich Weinmann         |           |
+| Logging in a DevOps world                                                                      | [Friedrich Weinmann](https://twitter.com/FredWeinmann)         |  [Slides and Code](https://github.com/FriedrichWeinmann/P2019-PSSummit-Logging-in-a-DevOps-World)         |
 | Beyond Pester 102: Acceptance testing with PowerShell                                          | [Glenn Sarti](https://glennsarti.github.io/) | [Slides and Code](https://glennsarti.github.io/presentation/powershell-summit2019-pester/) |
 | Malicious Payloads vs Deep Visibility: A PowerShell Story                                      | Daniel Bohannon            |           |
 | Unexplained phenomena: powerful tricks you likely didn't know were even possible               | [Kirk Munro](https://twitter.com/poshoholic) |           |
 | Completely Automate Managing Windows Software...Forever                                        | Daniel Franciscus          | [Scripts & Slides](https://github.com/dfranciscus/PSSummit2019)          |
 | Automate All The Things–Where To Start And Where To Go?                                        | [Chris Hunt](https://twitter.com/LogicalDiagram)                 |  [Slides](https://docs.google.com/presentation/d/12QwL8dHJ2qIaWYCycCnvGnXhZE5CXE7DEkeXVnkOCE4/edit?usp=sharing)         |
 | PSCache - simple strategies for magnificent performance                                        | Mathias Jessen             |           |
-| Bullet-proofing: Patterns & Practices for survivable advanced functions and scripts            | Joel “Jaykul” Bennett      |           |
+| Bullet-proofing: Patterns & Practices for survivable advanced functions and scripts            | [Joel “Jaykul” Bennett](https://twitter.com/jaykul)      |  [Slides and code](https://github.com/Jaykul/DevOps2019)  |
 | Publishing and Managing Modules in an Internal Repository                                      | [Kevin Marquette](https://twitter.com/KevinMarquette)            |  [Slides and code](https://github.com/KevinMarquette/ManagingModulesPresentation/tree/PSHSummit2019)         |
 | Reporting on Server Compliance with DSCv2: Guest Configuration                                 | Michael Greene             |           |
 | Unleash your PowerShell with AWS Lambda and Serverless Computing                               | Andrew Pearce              |           |
@@ -49,7 +49,7 @@
 | Dungeons & Dragons & Development: How Playing Games Makes You a Better IT Pro                  | [Michael T Lombardi](https://twitter.com/barbariankb) | [Slides](https://gitpitch.com/michaeltlombardi/talks?p=dndnd#/), [Slides with notes](https://gitpitch.com/michaeltlombardi/talks?p=dndnd&n=true#/) |
 | Demystifying Terraform - "Hardcore" to Core Infrastructure-as-Code Tool                        | [Chris Hunt](https://twitter.com/LogicalDiagram)                 | [Slides and Code](https://github.com/cdhunt/pssummit2019-terraform)          |
 | PesterSec: Using Pester & ScriptAnalyzer for Detecting Obfuscated PowerShell                   | Daniel Bohannon            |           |
-| PowerShell + AutoRest + Swagger = Instant Modules                                              | Adam Murray                |           |
+| PowerShell + AutoRest + Swagger = Instant Modules                                              | [Adam Murray](https://twitter.com/muzzar78)                | [Code](https://github.com/tikabu/Summit2019)          |
 | PowerShell Error and Event Collection at Scale                                                 | Dakota Clark               |           |
 | Going Core with VMware PowerCLI!                                                               | [Luc Dekens](https://twitter.com/LucD22)              |  [slides](https://github.com/lucdekens/Presentations/blob/master/PowerShell_and_DevOps_Summit_2019/PowerCLI_goes_Core.pptx)                  |           |
 | Automating Active Directory Health Checks                                                      | Mike Kanakos               |           |
@@ -66,6 +66,6 @@
 | Jenkins - User Interface for your Powershell tasks                                             | Kirill Kravtsov            |           |
 | Basic To Boss: Customizing Your PowerShell Prompt                                              | Thomas Rayner              |           |
 | Look smarter: deliver the work you do in PowerShell in Excel form.                             | James O'Neill              |           |
-| Configuring F5 Big-IP with declarative configurations using AS3, Azure DevOps, and Powershell  | James Arruda               |           |
+| Configuring F5 Big-IP with declarative configurations using AS3, Azure DevOps, and Powershell  | [James Arruda](https://twitter.com/JimRockarruda)               | [Code](https://github.com/rockarruda/F5SummitSession)          |
 | Piping data between packaged scripts                                                           | Paul DeArment Jr           |           |
 | PowerShell in Azure Functions                                                                  | Dongbo Wang,Joey Aiello   |           |
