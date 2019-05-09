@@ -42,7 +42,7 @@
 | Life after "git push"                                                                          | Steven Murawski            |           |
 | How to become a SHiPS wright - Building with SHiPS                                             | [Glenn Sarti](https://glennsarti.github.io/) | [Slides and Code](https://glennsarti.github.io/presentation/powershell-summit2019-ships/)   |
 | Using VSCode as Your Default PowerShell Editor                                                 | Tyler Leonhardt            |           |
-| Using PowerShell in a Cross Platform World                                                     | William Hurt               |           |
+| Using PowerShell in a Cross Platform World                                                     | [William Hurt](https://twitter.com/randomnoun7)   |   [slides](https://gitpitch.com/randomnoun7/summit_talk_2019?n=true#/)        |
 | Containers - You Better Get on Board                                                           | Anthony Nocentino          |           |
 | Don't do that, do this instead: PowerShell worst practices and how to solve them               | [Chris Gardner](https://chrislgardner.github.io)              |  [slides](https://github.com/ChrisLGardner/presentations)      |
 | Better Ops Together: Practical PowerShell Pair Programming Patterns and Practices with VS Code | Mark Kraus                 |           |
