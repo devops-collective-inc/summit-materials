@@ -54,7 +54,7 @@
 | Automating Active Directory Health Checks                                                      | Mike Kanakos               |           |
 | Working with PSGraph                                                                           | [Kevin Marquette](https://twitter.com/KevinMarquette)            | [Slides and Code](https://github.com/KevinMarquette/PSGraphPresentation/tree/pshsummit2019)          |
 | Testing, Testing, 1...2...3: Using Pester for Infrastructure Validation                        | Brandon Olin               |           |
-| Using PowerShell Core to automate application packaging, deployment and updates with Habitat   | Matt Wrock                 |           |
+| Using PowerShell Core to automate application packaging, deployment and updates with Habitat   | [Matt Wrock](https://twitter.com/mwrockx)                 | [slides](https://docs.google.com/presentation/d/163ZqundEHl4bzVz5dLKqSSpXeE18fCt9gvEeiEEX5jM/edit?usp=sharing) |
 | Finding Performance Bottlenecks with PowerShell                                                | Mike F. Robbins            |           |
 | Advanced JEA Configurations                                                                    | James Petty                |           |
 | Writing Clustered Applications with Windows PowerShell and Apache Zookeeper                    | Tome Tanasovski            |           |
