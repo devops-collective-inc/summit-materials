@@ -1,4 +1,3 @@
-
 # PowerShell + Devops Global Summit 2019
 
 ## Traditional Sessions
@@ -69,3 +68,11 @@
 | Configuring F5 Big-IP with declarative configurations using AS3, Azure DevOps, and Powershell  | [James Arruda](https://twitter.com/JimRockarruda)               | [Code](https://github.com/rockarruda/F5SummitSession)          |
 | Piping data between packaged scripts                                                           | Paul DeArment Jr           |           |
 | PowerShell in Azure Functions                                                                  | Dongbo Wang,Joey Aiello   |           |
+
+## Attendee Posts
+
+Various posts on the summit from the community:
+
+* [Matt Bobke](https://twitter.com/mattbobke): [Takeaways from the PowerShell + DevOps Global Summit 2019](https://mattbobke.com/2019/05/02/takeaways-from-the-powershell-+-devops-global-summit-2019/#)
+* [Brian McG](https://twitter.com/AudibleSigh): [Powershell + DevOps Global Summit 2019 - A Brief Review](https://lc9er.github.io/powershell/2019/05/09/PSHSummit-2019.html)
+* [Dan Franciscus](https://twitter.com/dan_franciscus): [PowerShell Summit 2019 – The Sequel](https://winsysblog.com/2019/05/powershell-summit-2019-the-sequel.html)
