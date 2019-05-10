@@ -21,7 +21,7 @@
 | Doctor, Don't Defenestrate: What to Do with Legacy Scripts                                     | [Michael T Lombardi](https://twitter.com/barbariankb) | [Slides](https://gitpitch.com/michaeltlombardi/talks?p=doctor-dont-defenestrate#/), [Slides with notes](https://gitpitch.com/michaeltlombardi/talks?p=doctor-dont-defenestrate&n=true#/) |
 | Moving Up the Monitoring Stack                                                                 | Steven Murawski            |           |
 | PowerShell Remoting Internals                                                                  | Paul Higinbotham           |           |
-| Continuously deploying SQL code using Powershell                                               | Kirill Kravtsov            |           |
+| Continuously deploying SQL code using Powershell                                               | Kirill Kravtsov            |  [Slides and Code](https://github.com/nvarscar/dbops-pshsummit)         |
 | PSScriptAnalyzer: Overview, Advanced Usage, Customisation, Formatting and VS-Code integration  | Christoph Bergmeister      |           |
 | Logging in a DevOps world                                                                      | [Friedrich Weinmann](https://twitter.com/FredWeinmann)         |  [Slides and Code](https://github.com/FriedrichWeinmann/P2019-PSSummit-Logging-in-a-DevOps-World)         |
 | Beyond Pester 102: Acceptance testing with PowerShell                                          | [Glenn Sarti](https://glennsarti.github.io/) | [Slides and Code](https://glennsarti.github.io/presentation/powershell-summit2019-pester/) |
@@ -62,7 +62,7 @@
 | Lord of the Configurations                                                                     | Friedrich Weinmann         |           |
 | The Windows Subsystem for Linux                                                                | Tara Raj                   |           |
 | Monitoring Out, Observability In                                                               | Ebru Cucen                 |           |
-| Jenkins - User Interface for your Powershell tasks                                             | Kirill Kravtsov            |           |
+| Jenkins - User Interface for your Powershell tasks                                             | Kirill Kravtsov            | [Slides and Code](https://github.com/nvarscar/jenkins-lab)         |
 | Basic To Boss: Customizing Your PowerShell Prompt                                              | Thomas Rayner              |           |
 | Look smarter: deliver the work you do in PowerShell in Excel form.                             | James O'Neill              |           |
 | Configuring F5 Big-IP with declarative configurations using AS3, Azure DevOps, and Powershell  | [James Arruda](https://twitter.com/JimRockarruda)               | [Code](https://github.com/rockarruda/F5SummitSession)          |
