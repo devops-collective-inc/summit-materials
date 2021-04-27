@@ -1,0 +1,42 @@
+name: Actions Workflow
+on: [push, pull_request]
+defaults:
+  run:
+    shell: pwsh
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # download and start the container
+      - name: Startup the container
+        run: docker run -p 8834:8834 --hostname nessus --name nessus -d sometheycallme/docker-nessus:latest
+
+      # write license from secrets
+      - name: Write nessus license
+        env:
+          NLICENSE: ${{secrets.LICENSE}}
+        run: $env:NLICENSE | Set-Content -Path /tmp/nessus.license
+
+      # setup powershell module cache https://github.com/marketplace/actions/cache
+
+      - name: Set required PowerShell modules
+        id: psmodulecache
+        uses: potatoqualitee/psmodulecache@test
+        with:
+          modules-to-cache: PSFramework, PoshRSJob
+      - name: Setup PowerShell module cache
+        id: cacher
+        uses: actions/cache@v2
+        with:
+            path: ${{ steps.psmodulecache.outputs.modulepath }}
+            key: ${{ steps.psmodulecache.outputs.keygen }}
+      - name: Install required PowerShell modules
+        if: steps.cacher.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: |
+            Set-PSRepository PSGallery -InstallationPolicy Trusted
+            Install-Module ${{ steps.psmodulecache.outputs.needed }} -ErrorAction Stop
+
+      # then replace with cacher
