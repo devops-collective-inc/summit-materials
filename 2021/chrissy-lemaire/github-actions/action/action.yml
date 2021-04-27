@@ -1,0 +1,34 @@
+name: 'PowerShell Module Cache'
+branding:
+  icon: 'download'  
+  color: 'gray-dark'
+description: 'Cache modules from the PowerShell Gallery'
+inputs:
+  modules-to-cache:
+    description: 'The PowerShell modules to cache from the PowerShell Gallery'
+    required: true
+outputs:
+  modulepath: 
+    description: "Default module path for OS"
+    value: ${{ steps.psoutput.outputs.modulepath }}
+  keygen: 
+    description: "Unique Key Generator"
+    value: ${{ steps.psoutput.outputs.keygen }}
+  needed: 
+    description: "Needed modules"
+    value: ${{ steps.psoutput.outputs.needed }}
+  modules-to-cache: 
+    description: "Original request"
+    value: ${{ inputs.modules-to-cache }}
+runs:
+  using: "composite"
+  steps: 
+    - id: intro
+      shell: bash
+      run: echo Gathering information for modules ${{ inputs.modules-to-cache }}.
+    - id: psoutput
+      shell: pwsh
+      run: |
+        Write-Output "::set-output name=needed::$(${{ github.action_path }}/main.ps1 -Type Needed -Module ${{ inputs.modules-to-cache }})"
+        Write-Output "::set-output name=keygen::$(${{ github.action_path }}/main.ps1 -Type KeyGen -Module ${{ inputs.modules-to-cache }})"
+        Write-Output "::set-output name=modulepath::$(${{ github.action_path }}/main.ps1 -Type ModulePath -Module ${{ inputs.modules-to-cache }})"
