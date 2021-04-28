@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "resourceId": {
+            "type": "string"
+        },
+        "eventGridSubscriptionName": {
+            "type": "string",
+            "defaultValue": "TagWithCreator"
+        }
+    },
+    "functions": [
+    ],
+    "variables": {
+    },
+    "resources": [
+        {
+            "type": "Microsoft.EventGrid/eventSubscriptions",
+            "name": "[parameters('eventGridSubscriptionName')]",
+            "apiVersion": "2020-04-01-preview",
+            "properties": {
+                "destination": {
+                    "endpointType": "AzureFunction",
+                    "properties": {
+                        "resourceId": "[concat(parameters('resourceId'), '/functions/',parameters('eventGridSubscriptionName'))]"
+                    }
+                },
+                "filter": {
+                    "subjectBeginsWith": "",
+                    "subjectEndsWith": "",
+                    "isSubjectCaseSensitive": false,
+                    "includedEventTypes": [
+                        "Microsoft.Resources.ResourceWriteSuccess"
+                    ],
+                    "advancedFilters": [
+                        {
+                            "key": "data.operationName",
+                            "operatorType": "StringNotIn",
+                            "values": [
+                                "Microsoft.Resources/tags/write"
+                            ]
+                        }
+                    ]
+                },
+                "eventDeliverySchema": "EventGridSchema"
+            }
+        }
+    ],
+    "outputs": {
+    }
+}

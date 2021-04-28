@@ -1,0 +1,12 @@
+FROM mcr.microsoft.com/azure-cloudshell:latest
+
+RUN pwsh -c Install-Module PSDepend -Force
+
+COPY ["powershell/requirements.psd1", "/tmp/requirements.psd1"]
+
+RUN pwsh -c Invoke-PSDepend /tmp/requirements.psd1 -Force
+
+# Switch to non-root user:
+RUN useradd --create-home vscode
+WORKDIR /home/vscode
+USER vscode
