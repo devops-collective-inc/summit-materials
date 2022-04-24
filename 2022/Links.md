@@ -6,4 +6,4 @@
 * Plan dinner and other outings on [Slack](https://devops-summit.slack.com) via `#dinner_tonight`
 * [Propose](https://forms.office.com/r/U31EXvLj1U) a lightning demo!
 * Tweet about the summit via [#pshsummit](https://twitter.com/search?q=%23pshsummit)
-* Send photos you take at the summit to `photos@powershell.org` - link to view coming soon
+* Send photos you take at the summit to `photos@powershell.org` - [view photos here](https://dropevent.com/pwshsummit2022)
