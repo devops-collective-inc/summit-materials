@@ -5,5 +5,6 @@
 * Chat with fellow summiteers on [Slack](https://devops-summit.slack.com).  E-mail `summit@powershell.org` if you missed the original invite
 * Plan dinner and other outings on [Slack](https://devops-summit.slack.com) via `#dinner_tonight`
 * [Propose](https://forms.office.com/r/U31EXvLj1U) a lightning demo!
+* Want to run a side session?  E-mail `sidesessions@poershell.org`
 * Tweet about the summit via [#pshsummit](https://twitter.com/search?q=%23pshsummit)
 * Send photos you take at the summit to `photos@powershell.org` - [view photos here](https://dropevent.com/pwshsummit2022)
