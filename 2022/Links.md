@@ -8,3 +8,5 @@
 * Want to run a side session?  E-mail `sidesessions@poershell.org`
 * Tweet about the summit via [#pshsummit](https://twitter.com/search?q=%23pshsummit)
 * Send photos you take at the summit to `photos@powershell.org` - [view photos here](https://dropevent.com/pwshsummit2022)
+
+Monday only: [Manning deal of the day](https://www.manning.com/dotd) includes some PowerShell books
