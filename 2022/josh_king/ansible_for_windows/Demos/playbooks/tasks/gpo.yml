@@ -1,0 +1,42 @@
+---
+- name: Ensure latest version of PolicyFileEditor PowerShell module installed
+  community.windows.win_psmodule:
+    name: PolicyFileEditor
+    state: latest
+
+- name: 'Set Logon: "Turn on convenience PIN sign-in" to "Disabled"'
+  ansible.windows.win_powershell:
+    script: |
+      $PolicySplat = @{
+        Path      = 'C:\Windows\System32\GroupPolicy\Machine\registry.pol'
+        Key       = 'Software\Policies\Microsoft\Windows\System'
+        ValueName = 'AllowDomainPINLogon'
+        Data      = 0
+        Type      = 'dword'
+      }
+      if ((Get-PolicyFileEntry -Path $PolicySplat.Path -Key $PolicySplat.Key -ValueName $PolicySplat.ValueName).Data -eq $PolicySplat.Data) {
+        $Ansible.Changed = $false
+      } else {
+        Set-PolicyFileEntry @PolicySplat
+        $Ansible.Changed = $true
+      }
+  notify: "run gpupdate"
+
+- name: 'Set Logon: "Turn off app notifications on the lock screen" to "Enabled"'
+  ansible.windows.win_powershell:
+    script: |
+      $PolicySplat = @{
+        Path      = 'C:\Windows\System32\GroupPolicy\Machine\registry.pol'
+        Key       = 'Software\Policies\Microsoft\Windows\System'
+        ValueName = 'DisableLockScreenAppNotifications'
+        Data      = 1
+        Type      = 'dword'
+      }
+      if ((Get-PolicyFileEntry -Path $PolicySplat.Path -Key $PolicySplat.Key -ValueName $PolicySplat.ValueName).Data -eq $PolicySplat.Data) {
+        $Ansible.Changed = $false
+      } else {
+        Set-PolicyFileEntry @PolicySplat
+        $Ansible.Changed = $true
+      }
+  notify: "run gpupdate"
+...

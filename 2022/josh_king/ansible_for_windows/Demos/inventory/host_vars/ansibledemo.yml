@@ -1,0 +1,37 @@
+---
+ansible_winrm_server_cert_validation: ignore
+ansible_connection: winrm
+ansible_port: 5986
+ansible_winrm_transport: ntlm
+
+# If using a custom port for WinRM, set the WinRM scheme:
+#
+# ansible_winrm_scheme: 'http'
+# ansible_winrm_scheme: 'https'
+#
+# https://blog.pauby.com/post/ansible-winrm-custom-port-causes-sslerror/
+
+ansible_host: 127.0.0.1
+
+win_user: Summiteer
+win_password: P@55w0rd # Change and vault me!
+
+shortname: AnsibleDemo
+backinfo_description: Summit 2022 Ansible Demo
+
+az_vm_size: 'Standard_D1_v2'
+
+az_rg_name: rg-SummitDemo1
+az_network_prefix: '10.10.0.0/16'
+az_subnet_prefix: '10.10.0.0/24'
+
+required_choco_packages:
+  - notepadplusplus
+  - sysmon
+  - 7zip
+  - pwsh
+
+required_powershell_modules:
+  - BurntToast
+  - PolicyFileEditor
+...
