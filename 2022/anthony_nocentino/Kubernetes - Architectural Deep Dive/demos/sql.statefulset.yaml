@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+ name: sqlinst1
+ labels:
+  app: sqlinst1
+spec:
+ serviceName: "sqlinst1"
+ replicas: 1
+ selector:
+  matchLabels:
+   app: sqlinst1
+ template:
+  metadata:
+   labels:
+    app: sqlinst1
+  spec:
+   securityContext:
+     fsGroup: 10001
+   containers:
+    - name: sqlinst1
+      image: 'mcr.microsoft.com/mssql/server:2019-CU13-ubuntu-20.04'
+      env:
+      - name: ACCEPT_EULA
+        value: "Y" 
+      - name: SA_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: mssql
+            key: SA_PASSWORD
+      volumeMounts:
+      - name: mssql
+        mountPath: "/var/opt/mssql"
+ volumeClaimTemplates:
+  - metadata:
+      name: mssql
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 8Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sqlinst1-0
+spec:
+  type: LoadBalancer
+  selector:
+      app: sqlinst1
+  ports:
+  - name: sql
+    protocol: TCP
+    port: 31433
+    targetPort: 1433
+
