@@ -1,0 +1,9 @@
+---
+all:
+  hosts:
+    ansibledemo:
+  children:
+    azure:
+      hosts:
+        ansibledemo:
+...

@@ -1,0 +1,92 @@
+---
+- hosts: ansibledemo
+  gather_facts: true
+
+  tasks:
+    - name: 'Change the hostname to {{ shortname }}'
+      ansible.windows.win_hostname:
+        name: "{{ shortname }}"
+
+    - name: Set timezone to '(UTC) Coordinated Universal Time'
+      community.windows.win_timezone:
+        timezone: UTC
+
+    - name: 'Create directory structure'
+      ansible.windows.win_file:
+        path: C:\Tools\BackInfo
+        state: directory
+
+    - name: 'Ensure the BackInfo executable is in the correct location'
+      win_copy:
+        src: 'BackInfo.exe'
+        dest: 'C:\Tools\BackInfo\BackInfo.exe'
+
+    - name: 'Ensure the company wallpaper is in the correct location'
+      win_copy:
+        src: 'chalkboard.bmp'
+        dest: 'C:\Tools\BackInfo\chalkboard.bmp'
+
+    - name: 'Ensure BackInfo configuration'
+      win_template:
+        src: "BackInfo.ini.j2"
+        dest: 'C:\tools\BackInfo\BackInfo.ini'
+
+    - name: 'Create a shortcut to BackInfo.exe in the Startup directory'
+      community.windows.win_shortcut:
+        src: 'C:\tools\BackInfo\BackInfo.exe'
+        dest: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\Startup\BackInfo.lnk'
+
+    - name: Disable Powershell v2
+      ansible.windows.win_powershell:
+        script: |
+          $PS2Feature = Get-WindowsOptionalFeature -Online -FeatureName MicrosoftWindowsPowerShellV2
+          if ($PS2Feature.State -eq 'Enabled') {
+            Disable-WindowsOptionalFeature -Online -FeatureName MicrosoftWindowsPowerShellV2 -Remove -NoRestart
+            $Ansible.Changed = $true
+          } else {
+            $Ansible.Changed = $false
+          }
+
+    - name: Install Nuget provider
+      ansible.windows.win_powershell:
+        script: |
+          if (-not (Get-PackageProvider -ListAvailable | Where-Object Name -EQ 'NuGet')) {
+            $null = Install-PackageProvider Nuget -MinimumVersion 2.8.5.201 -Force -Scope AllUsers -ForceBootstrap
+            $Ansible.Changed = $true
+          } else {
+            $Ansible.Changed = $false
+          }
+
+    - name: Install required Chocolatey packages
+      chocolatey.chocolatey.win_chocolatey:
+        name: '{{ choco_package }}'
+        state: present
+      loop: '{{ required_choco_packages }}'
+      loop_control:
+        loop_var: choco_package
+      when: required_choco_packages is defined
+
+    - name: Install required PowerShell modules
+      community.windows.win_psmodule:
+        name: '{{ ps_module }}'
+        state: latest
+      loop: '{{ required_powershell_modules }}'
+      loop_control:
+        loop_var: ps_module
+      when: required_powershell_modules is defined
+
+    - name: Ensure Firewall Rules
+      include_tasks:
+        file: tasks/firewall.yml
+
+    - name: Ensure local Group Policy
+      include_tasks:
+        file: tasks/gpo.yml
+
+  handlers:
+    - name: Apply updated policy
+      ansible.windows.win_powershell:
+        script: |
+          gpupdate.exe /force
+      listen: 'run gpupdate'
+...

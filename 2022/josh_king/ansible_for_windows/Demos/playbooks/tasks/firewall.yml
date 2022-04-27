@@ -1,0 +1,43 @@
+---
+- name: Firewall rule to block NetBIOS (TCP)
+  community.windows.win_firewall_rule:
+    name: 'Block-TCP-NetBIOS'
+    group: '_Ansible'
+    localport: 137-139
+    action: block
+    direction: in
+    protocol: tcp
+    state: present
+    enabled: yes
+
+- name: Firewall rule to block NetBIOS (UDP)
+  community.windows.win_firewall_rule:
+    name: 'Block-UDP-NetBIOS'
+    group: '_Ansible'
+    localport: 137-139
+    action: block
+    direction: in
+    protocol: udp
+    state: present
+    enabled: yes
+
+- name: Firewall rule to block calc.exe (x64)
+  community.windows.win_firewall_rule:
+    name: 'Block-calc-x64'
+    group: '_Ansible'
+    action: block
+    direction: out
+    program: '%SystemRoot%\System32\calc.exe'
+    state: present
+    enabled: yes
+
+- name: Firewall rule to block calc.exe (x86)
+  community.windows.win_firewall_rule:
+    name: 'Block-calc-x86'
+    group: '_Ansible'
+    action: block
+    direction: out
+    program: '%SystemRoot%\Syswow64\calc.exe'
+    state: present
+    enabled: yes
+...

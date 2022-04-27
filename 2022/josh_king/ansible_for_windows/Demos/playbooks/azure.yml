@@ -1,0 +1,159 @@
+---
+- hosts: ansibledemo
+  gather_facts: false
+
+  vars:
+    az_storage_account: 'stvm{{ shortname | lower }}'
+    az_network: 'vnet-{{ shortname | lower }}'
+    az_subnet_name: 'snet-{{ shortname | lower }}'
+    az_public_ip: 'pip-{{ shortname | lower }}'
+    az_nsg: 'nsg-{{ shortname | lower }}'
+    az_network_interface: 'nic-{{ shortname | lower }}'
+
+  tasks:
+    - name: Create a resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: '{{ az_rg_name }}'
+        location: '{{ az_region }}'
+        tags:
+          owner: summiteer
+          demo: summit2022
+      delegate_to: localhost
+
+    - name: Create a storage account
+      azure.azcollection.azure_rm_storageaccount:
+        resource_group: '{{ az_rg_name }}'
+        name: '{{ az_storage_account }}'
+        account_type: Standard_LRS
+      delegate_to: localhost
+
+    - name: Create a virtual network
+      azure.azcollection.azure_rm_virtualnetwork:
+        resource_group: '{{ az_rg_name }}'
+        name: '{{ az_network }}'
+        address_prefixes: '{{ az_network_prefix }}'
+      delegate_to: localhost
+
+    - name: Add a subnet
+      azure.azcollection.azure_rm_subnet:
+        resource_group: '{{ az_rg_name }}'
+        name: '{{ az_subnet_name }}'
+        address_prefix: '{{ az_subnet_prefix }}'
+        virtual_network: '{{ az_network }}'
+      delegate_to: localhost
+
+    - name: Create a public ip
+      azure.azcollection.azure_rm_publicipaddress:
+        resource_group: '{{ az_rg_name }}'
+        allocation_method: Static
+        name: '{{ az_public_ip }}'
+      register: _az_ip_address
+      delegate_to: localhost
+
+    - name: Update ansible_host address in host_vars
+      ansible.builtin.lineinfile:
+        path: ~/inventory/host_vars/ansibledemo.yml
+        regexp: 'ansible_host:'
+        line: 'ansible_host: {{ _az_ip_address.state.ip_address }}'
+      delegate_to: localhost
+
+    - name: Set ansible_host for this run
+      set_fact:
+        ansible_host: '{{ _az_ip_address.state.ip_address }}'
+
+    - name: Create a security group that allows WinRM and RDP
+      azure.azcollection.azure_rm_securitygroup:
+        resource_group: '{{ az_rg_name }}'
+        name: '{{ az_nsg }}'
+        rules:
+          - name: WinRM
+            protocol: Tcp
+            destination_port_range: 5986
+            source_address_prefix:
+              - '10.0.0.1/32' # Your IP here
+            access: Allow
+            priority: 101
+            direction: Inbound
+          - name: RDP
+            protocol: Tcp
+            destination_port_range: 3389
+            source_address_prefix:
+              - '10.0.0.1/32' # Your IP here
+            access: Allow
+            priority: 102
+            direction: Inbound
+      delegate_to: localhost
+
+    - name: Create a NIC
+      azure.azcollection.azure_rm_networkinterface:
+        resource_group: '{{ az_rg_name }}'
+        name: '{{ az_network_interface }}'
+        virtual_network: '{{ az_network }}'
+        subnet: '{{ az_subnet_name }}'
+        security_group: '{{ az_nsg }}'
+        ip_configurations:
+          - name: 'ip-{{ shortname | lower }}'
+            public_ip_address_name: '{{ az_public_ip }}'
+            primary: true
+      delegate_to: localhost
+
+    - name: Create a virtual machine
+      azure.azcollection.azure_rm_virtualmachine:
+        resource_group: '{{ az_rg_name }}'
+        name: '{{ shortname }}'
+        os_type: Windows
+        vm_size: '{{ az_vm_size }}'
+        storage_account: '{{ az_storage_account }}'
+        storage_container: '{{ shortname | lower }}'
+        storage_blob: '{{ shortname }}.vhd'
+        admin_username: '{{ win_user }}'
+        admin_password: '{{ win_password }}'
+        network_interfaces: '{{ az_network_interface }}'
+        image:
+          offer: WindowsServer
+          publisher: microsoftwindowsserver
+          sku: 2022-datacenter
+          version: latest
+      delegate_to: localhost
+
+    - name: Create VM Extension - CustomScriptExtension
+      azure.azcollection.azure_rm_virtualmachineextension:
+        name: myvmextension
+        location: '{{ az_region }}'
+        resource_group: '{{ az_rg_name }}'
+        virtual_machine_name: '{{ shortname }}'
+        publisher: Microsoft.Compute
+        virtual_machine_extension_type: CustomScriptExtension
+        type_handler_version: '1.10'
+        settings: '{"fileUris": ["https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"], "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File ConfigureRemotingForAnsible.ps1", "managedIdentity": {}}'
+        auto_upgrade_minor_version: true
+      delegate_to: localhost
+
+    - name: Set temp_ansible_user for this run
+      set_fact:
+        temp_ansible_user: '{{ ansible_user }}'
+
+    - name: Set temp_ansible_password for this run
+      set_fact:
+        temp_ansible_password: '{{ ansible_password }}'
+
+    - name: Wait for system to become reachable over WinRM
+      wait_for_connection:
+        timeout: 900
+      vars:
+        ansible_user: '{{ win_user }}'
+        ansible_password: '{{ win_password }}'
+
+    - name: Create a dedicated Ansible user
+      ansible.windows.win_user:
+        name: '{{ temp_ansible_user }}'
+        password: '{{ temp_ansible_password }}'
+        state: present
+        groups:
+          - Administrators
+        user_cannot_change_password: yes
+        password_never_expires: yes
+      vars:
+        ansible_user: '{{ win_user }}'
+        ansible_password: '{{ win_password }}'
+...

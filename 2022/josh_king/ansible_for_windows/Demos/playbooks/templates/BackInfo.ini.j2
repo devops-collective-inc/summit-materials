@@ -1,0 +1,102 @@
+[General]
+BackgroundColor = 2097152
+AutoBackground = 0
+BackgroundBitmap = C:\Tools\BackInfo\chalkboard.bmp
+Output = %temp%\backinfo.bmp
+UpdateDesktop = 1
+LineSpacing = 2
+ForceDesktopCenter = 1
+SuppressErrors = 1
+
+[Line1]
+Font = Trebuchet MS
+Size = 42
+Color = 16777215
+Bold = 1
+Italic = 0
+Alignment = Center
+ShadowX = 2
+ShadowY = 2
+ShadowColor = 4210752
+Type = CompName
+
+[Line2]
+Font = Trebuchet MS
+Size = 32
+Color = 16777215
+Bold = 1
+Italic = 0
+Alignment = Center
+ShadowX = 2
+ShadowY = 2
+ShadowColor = 4210752
+Type = FreeText
+Text = {{ backinfo_description }}
+
+[Line3]
+Font = Trebuchet MS
+Size = 20
+Color = 10526880
+Bold = 0
+Italic = 0
+Alignment = Center
+ShadowX = 0
+ShadowY = 0
+ShadowColor = 4210752
+Type = UserName
+
+[Line4]
+Font = Trebuchet MS
+Size = 20
+Color = 10526880
+Bold = 0
+Italic = 0
+Alignment = Center
+ShadowX = 1
+ShadowY = 1
+ShadowColor = 4210752
+Type = RegValue
+RegRoot = HKLM
+RegPath = SOFTWARE\Microsoft\Windows NT\CurrentVersion
+RegValue = ProductName
+RegTitle =
+
+[Line5]
+Font = Trebuchet MS
+Size = 20
+Color = 10526880
+Bold = 0
+Italic = 0
+Alignment = Center
+ShadowX = 0
+ShadowY = 0
+ShadowColor = 4210752
+Type = RegValue
+RegRoot = HKLM
+RegPath = SOFTWARE\Microsoft\Windows NT\CurrentVersion
+RegValue = CurrentBuild
+RegTitle = Build
+
+[Line6]
+Font = Trebuchet MS
+Size = 20
+Color = 10526880
+Bold = 0
+Italic = 0
+Alignment = Center
+ShadowX = 0
+ShadowY = 0
+ShadowColor = 4210752
+Type = SysInfo
+
+[Line7]
+Font = Trebuchet MS
+Size = 20
+Color = 10526880
+Bold = 0
+Italic = 0
+Alignment = Center
+ShadowX = 0
+ShadowY = 0
+ShadowColor = 4210752
+Type = NetInfo
