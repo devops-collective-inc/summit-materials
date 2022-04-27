@@ -1,0 +1,6 @@
+{
+    "prefix": "svc.mfp",
+    "aadLicenseSkuPartNumber": "EXCHANGESTANDARD",
+    "groups": [ "MFA Exception", "Service Accounts" ],
+    "accountDomain": "domain.com"
+}
