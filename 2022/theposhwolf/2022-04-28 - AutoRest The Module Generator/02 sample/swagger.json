@@ -1,0 +1,726 @@
+{
+    "x-generator": "NSwag v13.14.8.0 (NJsonSchema v10.5.2.0 (Newtonsoft.Json v12.0.0.0))",
+    "swagger": "2.0",
+    "info": {
+        "title": "Runway API",
+        "version": "2.0"
+    },
+    "host": "portal.runway.host",
+    "schemes": [
+        "https"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/v2/connections": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": false,
+                        "schema": {
+                            "$ref": "#/definitions/QueryResponseOfIConnectionQueryView"
+                        },
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_List"
+            },
+            "post": {
+                "consumes": [
+                    "application/json",
+                    "application/*+json"
+                ],
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_Create",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": false,
+                        "schema": {
+                            "$ref": "#/definitions/IdResponse"
+                        },
+                        "description": ""
+                    }
+                },
+                "parameters": [
+                    {
+                        "x-nullable": false,
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateConnectionRequest"
+                        },
+                        "name": "request",
+                        "in": "body"
+                    }
+                ]
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "x-nullable": false,
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/IdRequest"
+                        },
+                        "name": "setRequest",
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": true,
+                        "description": ""
+                    }
+                },
+                "consumes": [
+                    "application/json",
+                    "application/*+json"
+                ],
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_DeleteBySet"
+            }
+        },
+        "/api/v2/connections/{connectionId}": {
+            "get": {
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "x-nullable": true,
+                        "name": "connectionId"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": false,
+                        "schema": {
+                            "$ref": "#/definitions/RunwayConnection"
+                        },
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_Load"
+            },
+            "put": {
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "x-nullable": true,
+                        "name": "connectionId"
+                    },
+                    {
+                        "x-nullable": false,
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateConnectionRequest"
+                        },
+                        "name": "request",
+                        "in": "body"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": true,
+                        "description": ""
+                    }
+                },
+                "consumes": [
+                    "application/json",
+                    "application/*+json"
+                ],
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_Update"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "type": "string",
+                        "required": true,
+                        "in": "path",
+                        "x-nullable": true,
+                        "name": "connectionId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": true,
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_DeleteById"
+            }
+        },
+        "/api/v2/connections/count": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_Count"
+            }
+        },
+        "/api/v2/connections/query": {
+            "post": {
+                "consumes": [
+                    "application/json",
+                    "application/*+json"
+                ],
+                "tags": [
+                    "Connection"
+                ],
+                "operationId": "Connection_Query",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": false,
+                        "schema": {
+                            "$ref": "#/definitions/QueryResponseOfIConnectionQueryView"
+                        },
+                        "description": ""
+                    }
+                },
+                "parameters": [
+                    {
+                        "x-nullable": false,
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Query"
+                        },
+                        "name": "query",
+                        "in": "body"
+                    }
+                ]
+            }
+        },
+        "/api/v2/auth/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "operationId": "Authentication_Login",
+                "consumes": [
+                    "application/json",
+                    "application/*+json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LoginRequest"
+                        },
+                        "x-nullable": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "x-nullable": false,
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/LoginResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v2/auth/logout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Authentication_Logout",
+                "description": "Terminate the current user session.",
+                "operationId": "Authentication_Logout",
+                "responses": {
+                    "200": {
+                        "x-nullable": true,
+                        "description": "",
+                        "schema": {
+                            "type": "file"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ActionSetting": {
+            "required": [
+                "type",
+                "isOptional"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/ActionSettingType"
+                },
+                "isOptional": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "defaultValue": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ActionSettingType": {
+            "enum": [
+                "String",
+                "Number",
+                "Boolean",
+                "Password"
+            ],
+            "x-enumNames": [
+                "String",
+                "Number",
+                "Boolean",
+                "Password"
+            ],
+            "type": "string",
+            "description": ""
+        },
+        "CreateConnectionRequest": {
+            "required": [
+                "isHidden"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "actionId": {
+                    "type": "string"
+                },
+                "groupId": {
+                    "type": "string"
+                },
+                "assignedEndpointId": {
+                    "type": "string"
+                },
+                "settings": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "runnerId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "isHidden": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "FilterComparison": {
+            "required": [
+                "caseSensitive"
+            ],
+            "properties": {
+                "operator": {
+                    "type": "string"
+                },
+                "caseSensitive": {
+                    "type": "boolean"
+                },
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FilterComparison"
+                    }
+                },
+                "left": {
+                    "type": "string"
+                },
+                "right": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IConnectionQueryView": {
+            "x-abstract": true,
+            "required": [
+                "isSelected",
+                "isHidden"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "actionId": {
+                    "type": "string"
+                },
+                "actionName": {
+                    "type": "string"
+                },
+                "isHidden": {
+                    "type": "boolean"
+                },
+                "settings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ActionSetting"
+                    }
+                },
+                "isSelected": {
+                    "type": "boolean"
+                },
+                "assignedEndpointId": {
+                    "type": "string"
+                },
+                "connectionMetrics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RunwayConnectionStatistic"
+                    }
+                },
+                "runnerId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "assignedEndpointName": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "IdRequest": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "IdResponse": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/IdRequest"
+                },
+                {
+                    "type": "object"
+                }
+            ]
+        },
+        "LoginResponse": {
+            "type": "object",
+            "properties": {
+                "ttl": {
+                    "type": "string"
+                },
+                "session": {
+                    "type": "string"
+                }
+            }
+        },
+        "LoginRequest": {
+            "type": "object",
+            "required": [
+                "remember"
+            ],
+            "properties": {
+                "ttl": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "remember": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "Query": {
+            "required": [
+                "skip",
+                "take",
+                "includeSubgroups",
+                "sortDirection"
+            ],
+            "properties": {
+                "selectionCheckId": {
+                    "type": "string"
+                },
+                "take": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "filter": {
+                    "$ref": "#/definitions/FilterComparison"
+                },
+                "membershipCheckId": {
+                    "type": "string"
+                },
+                "sortField": {
+                    "type": "string"
+                },
+                "rootContainerId": {
+                    "type": "string"
+                },
+                "includeSubgroups": {
+                    "type": "boolean"
+                },
+                "sortDirection": {
+                    "$ref": "#/definitions/SortDirection"
+                },
+                "skip": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "type": "object"
+        },
+        "QueryResponseOfIConnectionQueryView": {
+            "required": [
+                "filteredCount",
+                "totalCount",
+                "selectedCount"
+            ],
+            "properties": {
+                "selectedCount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IConnectionQueryView"
+                    }
+                },
+                "filteredCount": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "totalCount": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "type": "object"
+        },
+        "RunwayConnection": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/RunwayObject"
+                },
+                {
+                    "required": [
+                        "isHidden"
+                    ],
+                    "properties": {
+                        "actionId": {
+                            "type": "string"
+                        },
+                        "actionName": {
+                            "type": "string"
+                        },
+                        "settings": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ActionSetting"
+                            }
+                        },
+                        "assignedEndpointId": {
+                            "type": "string"
+                        },
+                        "connectionMetrics": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/RunwayConnectionStatistic"
+                            }
+                        },
+                        "runnerId": {
+                            "type": "string"
+                        },
+                        "assignedEndpointName": {
+                            "type": "string"
+                        },
+                        "isHidden": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        },
+        "RunwayConnectionStatistic": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/RunwayStatistic"
+                },
+                {
+                    "required": [
+                        "transferredBytes"
+                    ],
+                    "properties": {
+                        "transferredBytes": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        },
+        "RunwayObject": {
+            "x-abstract": true,
+            "required": [
+                "revision",
+                "isSelected"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "isSelected": {
+                    "type": "boolean"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "revision": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "type": "object"
+        },
+        "RunwayStatistic": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/RunwayObject"
+                },
+                {
+                    "required": [
+                        "timestamp"
+                    ],
+                    "properties": {
+                        "referenceObjectId": {
+                            "type": "string"
+                        },
+                        "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "statString": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        },
+        "SortDirection": {
+            "enum": [
+                "Ascending",
+                "Descending"
+            ],
+            "x-enumNames": [
+                "Ascending",
+                "Descending"
+            ],
+            "type": "string",
+            "description": ""
+        },
+        "UpdateConnectionRequest": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/CreateConnectionRequest"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
