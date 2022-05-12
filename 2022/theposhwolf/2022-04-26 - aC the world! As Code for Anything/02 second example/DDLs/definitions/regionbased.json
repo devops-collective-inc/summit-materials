@@ -1,0 +1,22 @@
+{
+    "All": {
+        "Region": "all",
+        "Name": "$Region-all",
+        "Filter": "(CustomAttribute1 -eq '$Region')"
+    },
+    "Provider": {
+        "Region": "all",
+        "Name":"$Region-Provider",
+        "Filter": "((CustomAttribute1 -eq '$Region') -and (CustomAttribute2 -eq 'Provider'))"
+    },
+    "Staff": {
+        "Region": "all",
+        "Name": "$Region-Staff",
+        "Filter": "((CustomAttribute1 -eq '$Region') -and (CustomAttribute2 -eq 'Staff'))"
+    },
+    "MAs": {
+        "Region": [ "Seattle" ],
+        "Name": "$Region-MA",
+        "Filter": "((CustomAttribute1 -eq '$Region') -and (CustomAttribute2 -eq 'Staff')) -and ((Title -eq 'Clinical Support - MA') -or (Title -eq 'Practice Manager') -or (Title -eq 'Clinical Lead - MA'))"
+    }
+}

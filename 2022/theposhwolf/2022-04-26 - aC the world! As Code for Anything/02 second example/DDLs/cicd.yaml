@@ -1,0 +1,46 @@
+name: CICD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  Sync:
+
+    runs-on: windows-latest
+
+    steps:
+      - name: Create variables for module cacher
+        id: psmodulecache
+        uses: potatoqualitee/psmodulecache@v3.5
+        with:
+          modules-to-cache: ExchangeOnlineManagement
+
+      - name: Run module cacher action
+        id: cacher
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.psmodulecache.outputs.modulepath }}
+          key: ${{ steps.psmodulecache.outputs.keygen }}
+
+      - name: Install PowerShell modules
+        if: steps.cacher.outputs.cache-hit != 'true'
+        uses: potatoqualitee/psmodulecache@v3.5
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Run script
+        if: ${{ github.event_name == 'pull_request' }}
+        shell: pwsh
+        run: .\script.ps1 -JSON_CERT '${{ secrets.JSON_CERT }}' -CERT_SECRET '${{ secrets.CERT_SECRET }}' -AAD_APP_ID '${{ secrets.AAD_APP_ID }}' -Test
+
+      - name: Run script
+        if: ${{ github.event_name == 'push' }}
+        shell: pwsh
+        run: .\script.ps1 -JSON_CERT '${{ secrets.JSON_CERT }}' -CERT_SECRET '${{ secrets.CERT_SECRET }}' -AAD_APP_ID '${{ secrets.AAD_APP_ID }}'
