@@ -1,0 +1,1 @@
+﻿New-PSUVariable -Name "ScryfallApi" -Value 'https://api.scryfall.com' -Description "The Scryfall API URL. "
