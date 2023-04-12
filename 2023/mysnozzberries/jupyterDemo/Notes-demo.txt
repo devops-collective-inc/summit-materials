@@ -1,0 +1,50 @@
+winget install --id Microsoft.VisualStudioCode
+winget install --id Microsoft.DotNet.SDK.7 --log C:\temp\dotnet.log
+winget install --id Microsoft.PowerShell
+
+# New Terminal Session for PWSH
+$psversionTable
+& code
+
+# Install PolyGlot Extension in VSCode
+# New Jupyter Notebook for PowerShell
+$psversionTable
+
+iwr https://raw.githubusercontent.com/Snozzberries/jupyterDemo/main/workingWithO365.ipynb -OutFile .\workingWithO365.ipynb
+code .\workingWithO365.ipynb
+
+# Show basic navigations
+# Show Mermaid
+
+# Start basics
+# Get email and show email in Outlook
+# Send Teams message and show Teams
+
+# Start complex
+# Send Teams message and show Teams
+
+# Start JupyterHub
+# Show automatic server launch
+# Show ECS task
+$psversionTable
+iwr https://raw.githubusercontent.com/Snozzberries/jupyterDemo/main/workingWithO365.ipynb -OutFile .\workingWithO365.ipynb
+# Refresh dir viewer
+# Open file
+# Run Mermaid
+# change Kernel
+# Run through Connecting to the graph
+# Connect-MgGraph -ContextScope Process
+# Add a code cell and show Get-MgContext
+
+# Hub > Home > Token
+# Create new token
+# New notebook in VSCode
+# Change Kernel to existing server
+# https://jupyter.soule.aws.sentinel.com/user/allen%20deyoung?token=
+## In VSCode
+gci
+## In Browser
+gci
+"" > ./test.txt
+## In VSCode
+gci

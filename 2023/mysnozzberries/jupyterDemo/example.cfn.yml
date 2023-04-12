@@ -1,0 +1,585 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Metadata:
+  Generator: "former2"
+Description: ""
+Resources:
+  Route53HostedZoneed49db6:
+    Type: "AWS::Route53::HostedZone"
+    Properties:
+      Name: "REPLACEME."
+
+  IAMManagedPolicyd1cdb92:
+    Type: "AWS::IAM::ManagedPolicy"
+    Properties:
+      ManagedPolicyName: !Sub "POLICY-${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}HubTask"
+      Path: "/"
+      PolicyDocument: !Sub |
+          {
+              "Version": "2012-10-17",
+              "Statement": [
+                  {
+                      "Effect": "Allow",
+                      "Action": [
+                          "secretsmanager:GetResourcePolicy",
+                          "secretsmanager:GetSecretValue",
+                          "secretsmanager:DescribeSecret",
+                          "secretsmanager:ListSecretVersionIds"
+                      ],
+                      "Resource": [
+                          "arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Hub-vDK2TJ"
+                      ]
+                  },
+                  {
+                      "Effect": "Allow",
+                      "Action": "secretsmanager:ListSecrets",
+                      "Resource": "*"
+                  }
+              ]
+          }
+
+  IAMManagedPolicy45261f6:
+    Type: "AWS::IAM::ManagedPolicy"
+    Properties:
+      ManagedPolicyName: !Sub "Policy-${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Hub"
+      Path: "/"
+      PolicyDocument: !Sub |
+          {
+              "Version": "2012-10-17",
+              "Statement": [
+                  {
+                      "Sid": "",
+                      "Effect": "Allow",
+                      "Action": "ecs:RunTask",
+                      "Resource": "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:task-definition/${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Lab:*",
+                      "Condition": {
+                          "ArnEquals": {
+                              "ecs:cluster": "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:cluster/${ECSCluster3b3064b}"
+                          }
+                      }
+                  },
+                  {
+                      "Sid": "",
+                      "Effect": "Allow",
+                      "Action": "ecs:StopTask",
+                      "Resource": "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:task/*",
+                      "Condition": {
+                          "ArnEquals": {
+                              "ecs:cluster": "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:cluster/${ECSCluster3b3064b}"
+                          }
+                      }
+                  },
+                  {
+                      "Sid": "",
+                      "Effect": "Allow",
+                      "Action": "ecs:DescribeTasks",
+                      "Resource": "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:task/*",
+                      "Condition": {
+                          "ArnEquals": {
+                              "ecs:cluster": "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:cluster/${ECSCluster3b3064b}"
+                          }
+                      }
+                  },
+                  {
+                      "Sid": "",
+                      "Effect": "Allow",
+                      "Action": "iam:PassRole",
+                      "Resource": [
+                          "arn:aws:iam::${AWS::AccountId}:role/${IAMRolebed6974}",
+                          "arn:aws:iam::${AWS::AccountId}:role/ROLE-${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}HubTask"
+                      ]
+                  }
+              ]
+          }
+
+  EC2VPCf861a40:
+    Type: "AWS::EC2::VPC"
+    Properties:
+      CidrBlock: "172.31.0.0/16"
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      InstanceTenancy: "default"
+      Tags: 
+      - 
+        Key: "Name"
+        Value: "Jupyter"
+
+  EC2SecurityGroupdd5141e:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: "default VPC security group"
+      GroupName: "default"
+      VpcId: !Ref EC2VPCf861a40
+      SecurityGroupIngress: 
+      - 
+        CidrIp: "0.0.0.0/0"
+        FromPort: 443
+        IpProtocol: "tcp"
+        ToPort: 443
+      SecurityGroupEgress: 
+      - 
+        CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+
+  EC2Subnet1cb6ae0:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      AvailabilityZone: !GetAtt EC2Instance80f61e0.AvailabilityZone
+      CidrBlock: "172.31.80.0/20"
+      VpcId: !Ref EC2VPCf861a40
+      MapPublicIpOnLaunch: true
+
+  EC2Subnete783616:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      AvailabilityZone: !Sub "${AWS::Region}d"
+      CidrBlock: "172.31.96.0/20"
+      VpcId: !Ref EC2VPCf861a40
+      MapPublicIpOnLaunch: true
+
+  ElasticLoadBalancingV2LoadBalancer766b917:
+    Type: "AWS::ElasticLoadBalancingV2::LoadBalancer"
+    Properties:
+      Name: !GetAtt ElasticLoadBalancingV2TargetGroup29cb74c.TargetGroupName
+      Scheme: "internet-facing"
+      Type: "application"
+      Subnets: 
+      - !Ref EC2Subnete783616
+      - !Ref EC2Subnet1cb6ae0
+      SecurityGroups: 
+      - !Ref EC2SecurityGroupdd5141e
+      IpAddressType: "ipv4"
+      LoadBalancerAttributes: 
+      - 
+        Key: "access_logs.s3.enabled"
+        Value: "false"
+      - 
+        Key: "idle_timeout.timeout_seconds"
+        Value: "60"
+      - 
+        Key: "deletion_protection.enabled"
+        Value: "false"
+      - 
+        Key: "routing.http2.enabled"
+        Value: "true"
+      - 
+        Key: "routing.http.drop_invalid_header_fields.enabled"
+        Value: "false"
+      - 
+        Key: "routing.http.xff_client_port.enabled"
+        Value: "false"
+      - 
+        Key: "routing.http.preserve_host_header.enabled"
+        Value: "false"
+      - 
+        Key: "routing.http.xff_header_processing.mode"
+        Value: "append"
+      - 
+        Key: "load_balancing.cross_zone.enabled"
+        Value: "true"
+      - 
+        Key: "routing.http.desync_mitigation_mode"
+        Value: "defensive"
+      - 
+        Key: "waf.fail_open.enabled"
+        Value: "false"
+      - 
+        Key: "routing.http.x_amzn_tls_version_and_cipher_suite.enabled"
+        Value: "false"
+
+  ElasticLoadBalancingV2Listener9de072d:
+    Type: "AWS::ElasticLoadBalancingV2::Listener"
+    Properties:
+      LoadBalancerArn: !Ref ElasticLoadBalancingV2LoadBalancer766b917
+      Port: 443
+      Protocol: "HTTPS"
+      SslPolicy: "ELBSecurityPolicy-2016-08"
+      Certificates: 
+      - 
+        CertificateArn: !Ref CertificateManagerCertificate5e80e33
+      DefaultActions: 
+      - 
+        Order: 1
+        TargetGroupArn: !Ref ElasticLoadBalancingV2TargetGroup31bd5cb
+        Type: "forward"
+
+  ElasticLoadBalancingV2ListenerRule610f13c:
+    Type: "AWS::ElasticLoadBalancingV2::ListenerRule"
+    Properties:
+      Priority: "1"
+      ListenerArn: !Sub "arn:aws:elasticloadbalancing:${AWS::Region}:${AWS::AccountId}:listener/app/${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}/5d6edee710aa3045/b16f4b2e9295e73c"
+      Conditions: 
+      - 
+        Field: "path-pattern"
+        Values: 
+        - "/"
+      Actions: 
+      - 
+        Type: "forward"
+        TargetGroupArn: !Ref ElasticLoadBalancingV2TargetGroup31bd5cb
+        ForwardConfig: 
+          TargetGroups: 
+          - 
+            TargetGroupArn: !Ref ElasticLoadBalancingV2TargetGroup31bd5cb
+            Weight: 1
+          TargetGroupStickinessConfig: 
+            Enabled: false
+
+  ElasticLoadBalancingV2TargetGroup31bd5cb:
+    Type: "AWS::ElasticLoadBalancingV2::TargetGroup"
+    Properties:
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: "/"
+      Port: 443
+      Protocol: "HTTP"
+      HealthCheckPort: "traffic-port"
+      HealthCheckProtocol: "HTTP"
+      HealthCheckTimeoutSeconds: 5
+      UnhealthyThresholdCount: 2
+      TargetType: "ip"
+      Matcher: 
+        HttpCode: "200,302"
+      HealthyThresholdCount: 5
+      VpcId: !Ref EC2VPCf861a40
+      Name: !GetAtt ECSService91b042a.Name
+      HealthCheckEnabled: true
+      TargetGroupAttributes: 
+      - 
+        Key: "target_group_health.unhealthy_state_routing.minimum_healthy_targets.count"
+        Value: "1"
+      - 
+        Key: "stickiness.enabled"
+        Value: "false"
+      - 
+        Key: "target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage"
+        Value: "off"
+      - 
+        Key: "deregistration_delay.timeout_seconds"
+        Value: "300"
+      - 
+        Key: "target_group_health.dns_failover.minimum_healthy_targets.count"
+        Value: "1"
+      - 
+        Key: "stickiness.app_cookie.cookie_name"
+        Value: ""
+      - 
+        Key: "stickiness.type"
+        Value: "lb_cookie"
+      - 
+        Key: "stickiness.lb_cookie.duration_seconds"
+        Value: "86400"
+      - 
+        Key: "slow_start.duration_seconds"
+        Value: "0"
+      - 
+        Key: "stickiness.app_cookie.duration_seconds"
+        Value: "86400"
+      - 
+        Key: "target_group_health.dns_failover.minimum_healthy_targets.percentage"
+        Value: "off"
+      - 
+        Key: "load_balancing.cross_zone.enabled"
+        Value: "use_load_balancer_configuration"
+      - 
+        Key: "load_balancing.algorithm.type"
+        Value: "round_robin"
+
+  ECRRepositorybfee205:
+    Type: "AWS::ECR::Repository"
+    Properties:
+      RepositoryName: "dotnet"
+      LifecyclePolicy: 
+        RegistryId: !Ref AWS::AccountId
+
+  ECRRepository14e6274:
+    Type: "AWS::ECR::Repository"
+    Properties:
+      RepositoryName: !GetAtt ElasticLoadBalancingV2TargetGroup31bd5cb.TargetGroupName
+      LifecyclePolicy: 
+        RegistryId: !Ref AWS::AccountId
+
+  ECSCluster3b3064b:
+    Type: "AWS::ECS::Cluster"
+    Properties:
+      ClusterName: "jupyterLabs"
+      CapacityProviders: 
+      - "FARGATE"
+      - "FARGATE_SPOT"
+
+  ECSService91b042a:
+    Type: "AWS::ECS::Service"
+    Properties:
+      ServiceName: "jupyterhub"
+      Cluster: !GetAtt ECSCluster3b3064b.Arn
+      LoadBalancers: 
+      - 
+        TargetGroupArn: !Sub "arn:aws:elasticloadbalancing:${AWS::Region}:${AWS::AccountId}:targetgroup/jupyterhub/61467cdc8148e04a"
+        ContainerName: "jupyterhub"
+        ContainerPort: 8000
+      DesiredCount: 0
+      LaunchType: "FARGATE"
+      PlatformVersion: "LATEST"
+      TaskDefinition: !Sub "arn:aws:ecs:${AWS::Region}:${AWS::AccountId}:task-definition/${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Hub:1"
+      DeploymentConfiguration: 
+        MaximumPercent: 200
+        MinimumHealthyPercent: 100
+        DeploymentCircuitBreaker: 
+          Enable: true
+          Rollback: true
+      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
+      NetworkConfiguration: 
+        AwsvpcConfiguration: 
+          AssignPublicIp: "ENABLED"
+          SecurityGroups: 
+          - !Ref EC2SecurityGroup958402e
+          Subnets: 
+          - !Ref EC2Subnet3d4a44c
+          - !Ref EC2Subnete783616
+          - !Ref EC2Subnet1cb6ae0
+      HealthCheckGracePeriodSeconds: 0
+      SchedulingStrategy: "REPLICA"
+      DeploymentController: 
+        Type: "ECS"
+
+  ECSTaskDefinition3e94c23:
+    Type: "AWS::ECS::TaskDefinition"
+    Properties:
+      ContainerDefinitions: 
+      - 
+        Essential: true
+        Image: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/dotnet:latest"
+        LogConfiguration: 
+          LogDriver: "awslogs"
+          Options: 
+            awslogs-create-group: "true"
+            awslogs-group: !Sub "/ecs/${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Lab"
+            awslogs-region: !Ref AWS::Region
+            awslogs-stream-prefix: "ecs"
+        Name: "dotnet"
+        PortMappings: 
+        - 
+          ContainerPort: 8888
+          HostPort: 8888
+          Protocol: "tcp"
+      Family: !Sub "${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Lab"
+      TaskRoleArn: !Sub "arn:aws:iam::${AWS::AccountId}:role/ROLE-${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}HubTask"
+      ExecutionRoleArn: !GetAtt IAMRolebed6974.Arn
+      NetworkMode: "awsvpc"
+      RequiresCompatibilities: 
+      - "FARGATE"
+      Cpu: "1024"
+      Memory: "2048"
+
+  ECSTaskDefinitionf2bcfb3:
+    Type: "AWS::ECS::TaskDefinition"
+    Properties:
+      ContainerDefinitions: 
+      - 
+        Essential: true
+        Image: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/${ElasticLoadBalancingV2TargetGroup31bd5cb.TargetGroupName}:latest"
+        LogConfiguration: 
+          LogDriver: "awslogs"
+          Options: 
+            awslogs-create-group: "true"
+            awslogs-group: !Sub "/ecs/${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Hub"
+            awslogs-region: !Ref AWS::Region
+            awslogs-stream-prefix: "ecs"
+        Name: !GetAtt ElasticLoadBalancingV2TargetGroup31bd5cb.TargetGroupName
+        PortMappings: 
+        - 
+          ContainerPort: 8000
+          HostPort: 8000
+          Protocol: "tcp"
+      Family: !Sub "${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Hub"
+      TaskRoleArn: !Sub "arn:aws:iam::${AWS::AccountId}:role/ROLE-${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}HubTask"
+      ExecutionRoleArn: !GetAtt IAMRolebed6974.Arn
+      NetworkMode: "awsvpc"
+      RequiresCompatibilities: 
+      - "FARGATE"
+      Cpu: "1024"
+      Memory: "2048"
+
+  EC2VPCGatewayAttachmentbfbcc7a:
+    Type: "AWS::EC2::VPCGatewayAttachment"
+    Properties:
+      InternetGatewayId: !Ref EC2InternetGatewayc9d37b0
+      VpcId: !Ref EC2VPCf861a40
+
+  EC2SecurityGroup958402e:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: "launch-wizard-15 created 2023-02-19T17:41:23.078Z"
+      GroupName: "launch-wizard-15"
+      VpcId: !Ref EC2VPCf861a40
+      SecurityGroupIngress: 
+      - 
+        CidrIp: !GetAtt EC2VPCf861a40.CidrBlock
+        FromPort: 8888
+        IpProtocol: "tcp"
+        ToPort: 8888
+      - 
+        CidrIp: !GetAtt EC2VPCf861a40.CidrBlock
+        FromPort: 8000
+        IpProtocol: "tcp"
+        ToPort: 8000
+      - 
+        CidrIp: "0.0.0.0/0"
+        FromPort: 22
+        IpProtocol: "tcp"
+        ToPort: 22
+      SecurityGroupEgress: 
+      - 
+        CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+
+  EC2Subnet3d4a44c:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      AvailabilityZone: !Sub "${AWS::Region}e"
+      CidrBlock: "172.31.48.0/20"
+      VpcId: !Ref EC2VPCf861a40
+      MapPublicIpOnLaunch: true
+      Tags: 
+      - 
+        Key: "Name"
+        Value: "Jupyter"
+
+  EC2SubnetNetworkAclAssociation009140a:
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    Properties:
+      SubnetId: !Ref EC2Subnet1cb6ae0
+      NetworkAclId: !Ref EC2NetworkAcl0298210
+
+  EC2SubnetNetworkAclAssociationafb781c:
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    Properties:
+      SubnetId: !Ref EC2Subnete783616
+      NetworkAclId: !Ref EC2NetworkAcl0298210
+
+  EC2SubnetNetworkAclAssociationd42f12c:
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    Properties:
+      SubnetId: !Ref EC2Subnet3d4a44c
+      NetworkAclId: !Ref EC2NetworkAcl0298210
+
+  EC2InternetGatewayc9d37b0:
+    Type: "AWS::EC2::InternetGateway"
+    Properties:
+      Tags: 
+      - 
+        Key: "Name"
+        Value: "Jupyter"
+
+  EC2Routeea4b062:
+    Type: "AWS::EC2::Route"
+    Properties:
+      DestinationCidrBlock: "0.0.0.0/0"
+      GatewayId: !Ref EC2InternetGatewayc9d37b0
+      RouteTableId: !Ref EC2RouteTable428aa93
+
+  EC2DHCPOptions81f4b4a:
+    Type: "AWS::EC2::DHCPOptions"
+    Properties:
+      DomainName: "ec2.internal"
+
+  EC2VPCDHCPOptionsAssociation81f4b4a:
+    Type: "AWS::EC2::VPCDHCPOptionsAssociation"
+    Properties:
+      DhcpOptionsId: !Ref EC2DHCPOptions81f4b4a
+      VpcId: !Ref EC2VPCf861a40
+
+  EC2RouteTable428aa93:
+    Type: "AWS::EC2::RouteTable"
+    Properties:
+      VpcId: !Ref EC2VPCf861a40
+      Tags: 
+      - 
+        Key: "Name"
+        Value: "Jupyter"
+
+  EC2NetworkAcl0298210:
+    Type: "AWS::EC2::NetworkAcl"
+    Properties:
+      VpcId: !Ref EC2VPCf861a40
+
+  SecretsManagerSecret0dd3e1c:
+    Type: "AWS::SecretsManager::Secret"
+    Properties:
+      Name: !Sub "${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}Hub"
+      Description: "Azure AD App secret"
+      SecretString: "REPLACEME"
+
+  IAMRolebed6974:
+    Type: "AWS::IAM::Role"
+    Properties:
+      Path: "/"
+      RoleName: "ecsTaskExecutionRole"
+      AssumeRolePolicyDocument: "{\"Version\":\"2008-10-17\",\"Statement\":[{\"Sid\":\"\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}"
+      MaxSessionDuration: 3600
+      ManagedPolicyArns: 
+      - "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+
+  IAMRole95f73cb:
+    Type: "AWS::IAM::Role"
+    Properties:
+      Path: "/"
+      RoleName: !Sub "ROLE-${ElasticLoadBalancingV2LoadBalancer766b917.LoadBalancerName}HubTask"
+      AssumeRolePolicyDocument: "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ecs-tasks.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}"
+      MaxSessionDuration: 3600
+      ManagedPolicyArns: 
+      - !Ref IAMManagedPolicy45261f6
+      - !Ref IAMManagedPolicyd1cdb92
+      Description: "Allows ECS tasks to call AWS services on your behalf."
+
+  IAMRole2065001:
+    Type: "AWS::IAM::Role"
+    Properties:
+      Path: "/"
+      RoleName: "ROLE-PushEcr"
+      AssumeRolePolicyDocument: "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}"
+      MaxSessionDuration: 3600
+      ManagedPolicyArns: 
+      - !Sub "arn:aws:iam::${AWS::AccountId}:policy/Policy-JupyterHub"
+      - !Sub "arn:aws:iam::${AWS::AccountId}:policy/POLICY-PushImage"
+      - !Sub "arn:aws:iam::${AWS::AccountId}:policy/POLICY-JupyterHubTask"
+      Description: "Allows EC2 instances to call AWS services on your behalf."
+
+  IAMInstanceProfile065a69e:
+    Type: "AWS::IAM::InstanceProfile"
+    Properties:
+      Path: "/"
+      InstanceProfileName: !Ref IAMRole2065001
+      Roles: 
+      - !Ref IAMRole2065001
+
+  CertificateManagerCertificate5e80e33:
+    Type: "AWS::CertificateManager::Certificate"
+    Properties:
+      DomainName: "REPLACEME"
+      SubjectAlternativeNames: 
+      - "REPLACEME"
+      DomainValidationOptions: 
+      - 
+        DomainName: "REPLACEME"
+        ValidationDomain: "REPLACEME"
+      CertificateTransparencyLoggingPreference: "ENABLED"
+
+  Route53RecordSet7ef0737:
+    Type: "AWS::Route53::RecordSet"
+    Properties:
+      Name: "REPLACEME."
+      Type: "CNAME"
+      TTL: 300
+      ResourceRecords: 
+      - !Sub "jupyter-1424296276.${AWS::Region}.elb.amazonaws.com"
+      HostedZoneId: !Ref Route53HostedZoneed49db6
+
+  Route53RecordSetec2439b:
+    Type: "AWS::Route53::RecordSet"
+    Properties:
+      Name: !Sub "REPLACEME.${Route53RecordSet7ef0737}"
+      Type: "CNAME"
+      TTL: 300
+      ResourceRecords: 
+      - "REPLACEME.wrpxpmnjfs.acm-validations.aws."
+      HostedZoneId: !Ref Route53HostedZoneed49db6
+
