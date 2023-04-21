@@ -1,0 +1,8 @@
+---
+hyperv_base_path: 'D:\Hyper-V'
+vm_path: '{{ hyperv_base_path }}\VM'
+vhdx_path: '{{ hyperv_base_path }}\ReferenceDisk'
+
+hyperv_nic_name: 'vnic-External'
+hyperv_default_disk_size: '128GB'
+...

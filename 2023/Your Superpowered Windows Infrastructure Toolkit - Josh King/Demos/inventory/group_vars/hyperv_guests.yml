@@ -1,0 +1,12 @@
+---
+hyperv_disk_size: '64GB'
+
+hyperv_memory_start: '4GB'
+hyperv_memory_min: '4GB'
+hyperv_memory_max: '4GB'
+
+hyperv_cpu: 3
+
+hyperv_autostart: 'Start'
+hyperv_autostartdelay: 60
+...

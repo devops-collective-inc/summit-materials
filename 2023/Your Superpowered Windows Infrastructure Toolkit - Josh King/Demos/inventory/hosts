@@ -1,0 +1,24 @@
+---
+all:
+  hosts:
+    atrius:
+    azard:
+    bane:
+    havok:
+  children:
+    hyperv_hosts:
+      hosts:
+        havok:
+    hyperv_guests:
+      hosts:
+        atrius:
+        bane:
+    windows_servers:
+      hosts:
+        atrius:
+        bane:
+        havok:
+    linux_servers:
+      hosts:
+        azard:
+...

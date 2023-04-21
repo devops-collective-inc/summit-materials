@@ -1,0 +1,57 @@
+---
+- hosts:
+    - atrius
+    - bane
+  gather_facts: true
+  strategy: free
+  # serial: 2
+
+  tasks:
+    - name: Install IIS feature and management tools
+      ansible.windows.win_feature:
+        name: Web-Server
+        state: present
+        include_sub_features: yes
+        include_management_tools: yes
+      register: iis_feature
+
+    - name: Reboot if installing IIS feature requires it
+      ansible.windows.win_reboot:
+      when: iis_feature.reboot_required
+
+    # https://www.free-css.com/free-css-templates/page200/biwas
+    - name: 'Copy website code bundle'
+      win_copy:
+        src: 'BiwasWebsite.zip'
+        dest: 'C:\Tools\BiwasWebsite.zip'
+
+    - name: Unzip website code bundle
+      community.windows.win_unzip:
+        src: C:\Tools\BiwasWebsite.zip
+        dest: C:\Tools\
+        creates: C:\Tools\bs-biwas
+
+    - name: 'Patch website stylesheet'
+      win_template:
+        src: 'style.css.j2'
+        dest: 'C:\Tools\bs-biwas\assets\css\style.css'
+
+    - name: Remove Default Web Site
+      community.windows.win_iis_website:
+        name: "Default Web Site"
+        state: absent
+
+    - name: Create Summit Demo Site
+      community.windows.win_iis_website:
+        name: Summit Demo
+        state: started
+        port: 80
+        ip: '*'
+        physical_path: C:\Tools\bs-biwas
+      register: iis_website
+
+    - name: Restart IIS
+      ansible.windows.win_powershell:
+        script: iisreset
+      when: iis_website.changed
+...

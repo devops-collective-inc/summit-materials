@@ -1,0 +1,53 @@
+- name: 'Set {{  item  }} Profile: "Firewall State" to "On"'
+  ansible.windows.win_powershell:
+    script: |
+      $PolicySplat = @{
+        Path      = '{{ policy_path }}'
+        Key       = 'Software\Policies\Microsoft\WindowsFirewall\{{  item  }}Profile'
+        ValueName = 'EnableFirewall'
+        Data      = 1
+        Type      = 'dword'
+      }
+      if ((Get-PolicyFileEntry -Path $PolicySplat.Path -Key $PolicySplat.Key -ValueName $PolicySplat.ValueName).Data -eq $PolicySplat.Data) {
+        $Ansible.Changed = $false
+      } else {
+        Set-PolicyFileEntry @PolicySplat
+        $Ansible.Changed = $true
+      }
+  notify: "run gpupdate"
+
+- name: 'Set {{  item  }} Profile: "Inbound Connections" to "Block"'
+  ansible.windows.win_powershell:
+    script: |
+      $PolicySplat = @{
+        Path      = '{{ policy_path }}'
+        Key       = 'Software\Policies\Microsoft\WindowsFirewall\{{  item  }}Profile'
+        ValueName = 'DefaultInboundAction'
+        Data      = 1
+        Type      = 'dword'
+      }
+      if ((Get-PolicyFileEntry -Path $PolicySplat.Path -Key $PolicySplat.Key -ValueName $PolicySplat.ValueName).Data -eq $PolicySplat.Data) {
+        $Ansible.Changed = $false
+      } else {
+        Set-PolicyFileEntry @PolicySplat
+        $Ansible.Changed = $true
+      }
+  notify: "run gpupdate"
+
+- name: 'Set {{  item  }} Profile: "Outbound Connections" to "Allow"'
+  ansible.windows.win_powershell:
+    script: |
+      $PolicySplat = @{
+        Path      = '{{ policy_path }}'
+        Key       = 'Software\Policies\Microsoft\WindowsFirewall\{{  item  }}Profile'
+        ValueName = 'DefaultOutboundAction'
+        Data      = 0
+        Type      = 'dword'
+      }
+      if ((Get-PolicyFileEntry -Path $PolicySplat.Path -Key $PolicySplat.Key -ValueName $PolicySplat.ValueName).Data -eq $PolicySplat.Data) {
+        $Ansible.Changed = $false
+      } else {
+        Set-PolicyFileEntry @PolicySplat
+        $Ansible.Changed = $true
+      }
+  notify: "run gpupdate"

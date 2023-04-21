@@ -1,0 +1,84 @@
+---
+- hosts:
+    - atrius
+    - bane
+  gather_facts: true
+
+  tasks:
+    - name: Check if installation type is Server Core
+      ansible.windows.win_powershell:
+        script: |
+          $Ansible.Changed = $false
+          $InstallationType = Get-ItemProperty -Path "HKLM:/Software/Microsoft/Windows NT/CurrentVersion" | Select-Object -ExpandProperty "InstallationType"
+          $Ansible.Result = $InstallationType -eq 'Server Core'
+      register: _is_server_core
+
+    - name: Install NuGet provider
+      ansible.windows.win_powershell:
+        script: |
+          if (-not (Get-PackageProvider -ListAvailable | Where-Object Name -EQ 'NuGet')) {
+            $null = Install-PackageProvider NuGet -MinimumVersion 2.8.5.201 -Force -Scope AllUsers -ForceBootstrap
+            $Ansible.Changed = $true
+          } else {
+            $Ansible.Changed = $false
+          }
+
+    - name: Ensure Chocolatey CLI is installed
+      chocolatey.chocolatey.win_chocolatey:
+        name: 'chocolatey'
+        state: 'latest'
+
+#    - name: 'Add internal Chocolatey source'
+#      chocolatey.chocolatey.win_chocolatey_source:
+#        name: 'choco-proxy'
+#        state: present
+#        source: '{{ choco_repo }}'
+#        source_username: '{{ choco_user }}'
+#        source_password: '{{ choco_password }}'
+#        update_password: on_create
+#      no_log: true
+#
+#    - name: 'Disable Chocolatey Community Repository source'
+#      chocolatey.chocolatey.win_chocolatey_source:
+#        name: chocolatey
+#        state: disabled
+
+    - name: Install baseline Chocolatey packages
+      chocolatey.chocolatey.win_chocolatey:
+        name: '{{ item.name | mandatory  }}'
+        version: '{{ item.version | default(omit) }}'
+        state: '{{ "latest" if item.version is undefined else "downgrade" }}'
+        package_params: '{{ item.package_params | default(omit) }}'
+      loop: '{{ baseline_packages }}'
+      register: choco_install
+      until: choco_install is not failed
+      retries: 3
+
+    - name: Install and Configure BackInfo
+      block:
+        - name: 'Create BackInfo directory structure'
+          ansible.windows.win_file:
+            path: C:\Tools\BackInfo
+            state: directory
+
+        - name: 'Ensure the BackInfo executable is in the correct location'
+          win_copy:
+            src: 'BackInfo.exe'
+            dest: 'C:\Tools\BackInfo\BackInfo.exe'
+
+        - name: 'Ensure the Server 2019 wallpaper is in the correct location'
+          win_copy:
+            src: 'Srv2019.bmp'
+            dest: 'C:\Tools\BackInfo\Srv2019.bmp'
+
+        - name: 'Ensure BackInfo configuration'
+          win_template:
+            src: "BackInfo.ini.j2"
+            dest: 'C:\Tools\BackInfo\BackInfo.ini'
+
+        - name: 'Create a shortcut to BackInfo.exe in the Startup directory'
+          community.windows.win_shortcut:
+            src: 'C:\Tools\BackInfo\BackInfo.exe'
+            dest: '%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\Startup\BackInfo.lnk'
+      when: backinfo_description is defined and not _is_server_core.result
+...

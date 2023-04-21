@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="generalize">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DoNotCleanTaskBar>true</DoNotCleanTaskBar>
+        </component>
+    </settings>
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
+            <ComputerName>{{ friendly_hostname }}</ComputerName>
+            <RegisteredOrganization>{{ os_owner_org | default('Example Inc') }}</RegisteredOrganization>
+            <RegisteredOwner>{{ os_owner | default('IT Department') }}</RegisteredOwner>
+            <DoNotCleanTaskBar>true</DoNotCleanTaskBar>
+            <TimeZone>UTC</TimeZone>
+        </component>
+        <component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <RunSynchronous>
+                <RunSynchronousCommand wcm:action="add">
+                    <Description>EnableAdmin</Description>
+                    <Order>1</Order>
+                    <Path>cmd /c net user Administrator /active:yes</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Description>UnfilterAdministratorToken</Description>
+                    <Order>2</Order>
+                    <Path>cmd /c reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v FilterAdministratorToken /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+            </RunSynchronous>
+        </component>
+        <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <InputLocale>En-US</InputLocale>
+            <SystemLocale>En-US</SystemLocale>
+            <UILanguage>En-US</UILanguage>
+            <UserLocale>En-US</UserLocale>
+        </component>
+        <component name="Microsoft-Windows-TerminalServices-LocalSessionManager" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <fDenyTSConnections>false</fDenyTSConnections>
+        </component>
+        <component name="Networking-MPSSVC-Svc" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DomainProfile_EnableFirewall>false</DomainProfile_EnableFirewall>
+            <PrivateProfile_EnableFirewall>false</PrivateProfile_EnableFirewall>
+            <PublicProfile_EnableFirewall>false</PublicProfile_EnableFirewall>
+        </component>
+        <component name="Microsoft-Windows-TCPIP" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Interfaces>
+                <Interface wcm:action="add">
+                    <Ipv4Settings>
+                        <DhcpEnabled>false</DhcpEnabled>
+                    </Ipv4Settings>
+                    <UnicastIpAddresses>
+                        <IpAddress wcm:action="add" wcm:keyValue="1">{{ local_ip_addr }}/24</IpAddress>
+                    </UnicastIpAddresses>
+                    <Identifier>Ethernet</Identifier>
+                    <Routes>
+                        <Route wcm:action="add">
+                            <Identifier>0</Identifier>
+                            <Prefix>0.0.0.0/0</Prefix>
+                            <NextHopAddress>{{ local_ip_gateway }}</NextHopAddress>
+                        </Route>
+                    </Routes>
+                </Interface>
+            </Interfaces>
+        </component>
+        <component name="Microsoft-Windows-DNS-Client" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <Interfaces>
+                <Interface wcm:action="add">
+                    <DNSServerSearchOrder>
+                        <IpAddress wcm:action="add" wcm:keyValue="1">{{ local_ip_dns | default('8.8.8.8') }}</IpAddress>
+                    </DNSServerSearchOrder>
+                    <Identifier>Ethernet</Identifier>
+                </Interface>
+            </Interfaces>
+        </component>
+    </settings>
+    <settings pass="oobeSystem">
+        <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
+            <UserAccounts>
+                <AdministratorPassword>
+                    <Value>{{ encoded_pass }}</Value>
+                    <PlainText>false</PlainText>
+                </AdministratorPassword>
+                <LocalAccounts>
+                    <LocalAccount wcm:action="add">
+                        <Password>
+                            <Value>{{ encoded_ansible_pass }}</Value>
+                            <PlainText>false</PlainText>
+                        </Password>
+                        <Description>Ansible user account</Description>
+                        <DisplayName>{{ ansible_user | upper }}</DisplayName>
+                        <Group>Administrators</Group>
+                        <Name>{{ ansible_user }}</Name>
+                    </LocalAccount>
+                </LocalAccounts>
+            </UserAccounts>
+            <OOBE>
+                <HideEULAPage>true</HideEULAPage>
+                <ProtectYourPC>1</ProtectYourPC>
+            </OOBE>
+            <RegisteredOrganization>{{ os_owner_org | default('Example Inc') }}</RegisteredOrganization>
+            <RegisteredOwner>{{ os_owner | default('IT Department') }}</RegisteredOwner>
+            <TimeZone>UTC</TimeZone>
+        </component>
+        <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <InputLocale>En-US</InputLocale>
+            <SystemLocale>En-US</SystemLocale>
+            <UILanguage>En-US</UILanguage>
+            <UserLocale>En-US</UserLocale>
+        </component>
+    </settings>
+</unattend>

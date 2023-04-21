@@ -1,0 +1,7 @@
+PowerShell.exe -NoLogo -File C:\Windows\Setup\Scripts\ConfigureRemotingForAnsible.ps1
+PowerShell.exe -NoLogo -Command "Set-LocalUser -Name '{{ ansible_user }}' -AccountNeverExpires -PasswordNeverExpires $true"
+
+del /Q /F C:\Unattend.xml
+del /Q /F C:\Windows\Panther\unattend.xml
+del /Q /F C:\Windows\Setup\Scripts\ConfigureRemotingForAnsible.ps1
+del /Q /F C:\Windows\Setup\Scripts\SetupComplete.cmd

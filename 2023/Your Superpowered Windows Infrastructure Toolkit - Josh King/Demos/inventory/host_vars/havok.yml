@@ -1,0 +1,7 @@
+---
+ansible_host: 172.23.0.100
+ansible_user: ansible
+ansible_password: '<PLACEHOLDER>'
+
+hyperv_nic_name: 'vnic-Havok-External'
+...

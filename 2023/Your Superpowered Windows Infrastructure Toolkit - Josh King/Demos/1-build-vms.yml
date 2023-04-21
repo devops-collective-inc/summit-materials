@@ -1,0 +1,43 @@
+---
+- hosts: havok
+  gather_facts: true
+
+  tasks:
+    - name: 'Create Atrius VM'
+      import_tasks: tasks/build-vm.yml
+      vars:
+        win_password: '{{ hostvars.atrius.win_password }}'
+        local_ip_addr: '{{ hostvars.atrius.local_ip_addr }}'
+        local_ip_gateway: '{{ hostvars.atrius.local_ip_gateway }}'
+        friendly_hostname: '{{ hostvars.atrius.friendly_hostname }}'
+        hyperv_disk_size: '{{ hostvars.atrius.hyperv_disk_size }}'
+        hyperv_cpu: '{{ hostvars.atrius.hyperv_cpu }}'
+        hyperv_memory_min: '{{ hostvars.atrius.hyperv_memory_min }}'
+        hyperv_memory_max: '{{ hostvars.atrius.hyperv_memory_max }}'
+        hyperv_memory_start: '{{ hostvars.atrius.hyperv_memory_start }}'
+        hyperv_autostart: '{{ hostvars.atrius.hyperv_autostart }}'
+        hyperv_autostartdelay: '{{ hostvars.atrius.hyperv_autostartdelay }}'
+
+    - name: 'Create Bane VM'
+      import_tasks: tasks/build-vm.yml
+      vars:
+        win_password: '{{ hostvars.bane.win_password }}'
+        local_ip_addr: '{{ hostvars.bane.local_ip_addr }}'
+        local_ip_gateway: '{{ hostvars.bane.local_ip_gateway }}'
+        friendly_hostname: '{{ hostvars.bane.friendly_hostname }}'
+        hyperv_disk_size: '{{ hostvars.bane.hyperv_disk_size }}'
+        hyperv_cpu: '{{ hostvars.bane.hyperv_cpu }}'
+        hyperv_memory_min: '{{ hostvars.bane.hyperv_memory_min }}'
+        hyperv_memory_max: '{{ hostvars.bane.hyperv_memory_max }}'
+        hyperv_memory_start: '{{ hostvars.bane.hyperv_memory_start }}'
+        hyperv_autostart: '{{ hostvars.bane.hyperv_autostart }}'
+        hyperv_autostartdelay: '{{ hostvars.bane.hyperv_autostartdelay }}'
+
+- hosts:
+    - atrius
+    - bane
+  gather_facts: false
+
+  tasks:
+    - wait_for_connection:
+...

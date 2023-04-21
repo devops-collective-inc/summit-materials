@@ -1,0 +1,18 @@
+---
+ansible_winrm_server_cert_validation: ignore
+ansible_connection: winrm
+ansible_port: 5985
+ansible_winrm_transport: ntlm
+ansible_winrm_scheme: 'http'
+
+# choco_user: 'demouser'
+# choco_password: '<PLACEHOLDER>'
+# choco_repo: 'http://<PLACEHOLDER>:8081/repository/choco-proxy/'
+
+baseline_packages:
+  - name: '7zip'
+  - name: 'notepadplusplus'
+
+policy_path: 'C:\Windows\System32\GroupPolicy\Machine\registry.pol'
+user_policy_path: 'C:\Windows\System32\GroupPolicy\User\registry.pol'
+...

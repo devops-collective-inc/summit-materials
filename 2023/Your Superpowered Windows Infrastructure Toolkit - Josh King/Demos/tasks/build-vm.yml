@@ -1,0 +1,161 @@
+---
+- name: Remove VM if refreshing
+  block:
+  - name: Power off VM
+    ansible.windows.win_powershell:
+      script: |
+        $Ansible.Changed = $false
+        $VM = Get-VM -Name '{{ friendly_hostname }}' -ErrorAction SilentlyContinue
+        if ($VM.State -eq 'Running') {
+          $VM | Stop-VM
+          $Ansible.Changed = $true
+        }
+
+  - name: Remove VM from Hyper-V
+    ansible.windows.win_powershell:
+      script: |
+        $Ansible.Changed = $false
+        $VM = Get-VM -Name '{{ friendly_hostname }}' -ErrorAction SilentlyContinue
+        if ($null -ne $VM) {
+          $VM | Remove-VM -Force
+          $Ansible.Changed = $true
+        }
+
+  - name: Remove VM directory
+    win_file:
+      dest: '{{ vm_path }}\{{ friendly_hostname }}\'
+      state: absent
+  when: force_vm_refresh is defined and force_vm_refresh == 'yes'
+
+- name: Check if VM exists
+  ansible.windows.win_powershell:
+    script: |
+      $Ansible.Changed = $false
+      $VM = Get-VM -Name '{{ friendly_hostname }}' -ErrorAction SilentlyContinue
+      if ($null -ne $VM) {
+        $Ansible.Result = $true
+      } else {
+        $Ansible.Result = $false
+      }
+  register: _vm_exists
+
+- name: Create VM
+  block:
+  - name: Ensure the Virtual Machine directory
+    win_file:
+      dest: '{{ vm_path }}\{{ friendly_hostname }}\'
+      state: directory
+
+  - name: Copy a reference VHDX
+    ansible.windows.win_copy:
+      src: '{{ vhdx_path }}\ReferenceDisk.vhdx'
+      dest: '{{ vm_path }}\{{ friendly_hostname }}\{{ friendly_hostname }}.vhdx'
+      remote_src: yes
+
+  - name: Resize VHDX
+    ansible.windows.win_powershell:
+      script: |
+        Resize-VHD -Path '{{ vm_path }}\{{ friendly_hostname }}\{{ friendly_hostname }}.vhdx' -SizeBytes {{ hyperv_disk_size }}
+    when: hyperv_disk_size != hyperv_default_disk_size
+
+  - name: Mount VHDX
+    community.windows.win_disk_image:
+      image_path: '{{ vm_path }}\{{ friendly_hostname }}\{{ friendly_hostname }}.vhdx'
+      state: present
+    register: _vhdx_mount
+
+  - name: Expand OS Parition
+    ansible.windows.win_powershell:
+      script: |
+        $Partition = Get-Partition | Where-Object {$_.AccessPaths -contains '{{ _vhdx_mount.mount_paths[0] }}'}
+        $SizeInfo = Get-PartitionSupportedSize -DiskNumber $Partition.DiskNumber -PartitionNumber $Partition.PartitionNumber
+        Resize-Partition -DiskNumber $Partition.DiskNumber -PartitionNumber $Partition.PartitionNumber -Size $SizeInfo.SizeMax
+    when: hyperv_disk_size != hyperv_default_disk_size
+
+  - name: Encode Admin Password
+    ansible.windows.win_powershell:
+      script: |
+        $Bytes = [System.Text.Encoding]::Unicode.GetBytes('{{ win_password }}AdministratorPassword')
+        $Ansible.Result = [Convert]::ToBase64String($Bytes)
+    register: _admin_pass
+    no_log: true
+
+  - name: Encode Ansible Password
+    ansible.windows.win_powershell:
+      script: |
+        $Bytes = [System.Text.Encoding]::Unicode.GetBytes('{{ ansible_password }}Password')
+        $Ansible.Result = [Convert]::ToBase64String($Bytes)
+    register: _ansible_pass
+    no_log: true
+
+  - name: Register encoded passwords
+    set_fact:
+      encoded_pass: '{{ _admin_pass.result }}'
+      encoded_ansible_pass: '{{ _ansible_pass.result }}'
+    no_log: true
+
+  - name: Add answer file to VHDX
+    win_template:
+      src: 'Unattend.xml.j2'
+      dest: '{{ _vhdx_mount.mount_paths[0] }}unattend.xml'
+    no_log: true
+
+  - name: Ensure Setup Scripts directory
+    win_file:
+      dest: '{{ _vhdx_mount.mount_paths[0] }}Windows\Setup\Scripts\'
+      state: directory
+
+# I would normally download this file, but let's not tempt the demo gods with conference wifi!
+#  - name: 'Download Ansible setup script'
+#    win_get_url:
+#      url: https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+#      dest: '{{ _vhdx_mount.mount_paths[0] }}Windows\Setup\Scripts\ConfigureRemotingForAnsible.ps1'
+
+  - name: 'Copy Ansible setup script'
+    win_copy:
+      src: ConfigureRemotingForAnsible.ps1
+      dest: '{{ _vhdx_mount.mount_paths[0] }}Windows\Setup\Scripts\ConfigureRemotingForAnsible.ps1'
+
+  - name: 'Copy SetupComplete.cmd'
+    win_template:
+      src: 'SetupComplete.cmd.j2'
+      dest: '{{ _vhdx_mount.mount_paths[0] }}Windows\Setup\Scripts\SetupComplete.cmd'
+
+  - name: Unmount VHDX
+    community.windows.win_disk_image:
+      image_path: '{{ vm_path }}\{{ friendly_hostname }}\{{ friendly_hostname }}.vhdx'
+      state: absent
+
+  - name: Create and start VM
+    ansible.windows.win_powershell:
+      script: |
+        $VMSplat = @{
+          Name               = '{{ friendly_hostname }}'
+          MemoryStartupBytes = {{ hyperv_memory_start }}
+          VHDPath            = '{{ vm_path }}\{{ friendly_hostname }}\{{ friendly_hostname }}.vhdx'
+          SwitchName         = '{{ hyperv_nic_name }}'
+          Path               = '{{ vm_path }}\'
+          Generation         = 2
+        }
+        $VM = New-VM @VMSplat
+
+        if ('{{ hyperv_memory_min }}' -ne '' -and '{{ hyperv_memory_max }}' -ne '') {
+          Set-VM -Name '{{ friendly_hostname }}' -DynamicMemory
+          Set-VM -Name '{{ friendly_hostname }}' -MemoryMinimumBytes {{ hyperv_memory_min }}
+          Set-VM -Name '{{ friendly_hostname }}' -MemoryMaximumBytes {{ hyperv_memory_max }}
+        } else {
+          Set-VM -Name '{{ friendly_hostname }}' -DynamicMemory:$false
+        }
+
+        Set-VM -Name '{{ friendly_hostname }}' -MemoryStartupBytes {{ hyperv_memory_start }}
+        Set-VM -Name '{{ friendly_hostname }}' -ProcessorCount {{ hyperv_cpu }}
+        Set-VM -Name '{{ friendly_hostname }}' -AutomaticStartAction {{ hyperv_autostart }}
+        Set-VM -Name '{{ friendly_hostname }}' -AutomaticStartDelay {{ hyperv_autostartdelay }}
+        Set-VM -Name '{{ friendly_hostname }}' -AutomaticStopAction ShutDown
+
+
+        Set-VMProcessor -VMName '{{ friendly_hostname }}' -ExposeVirtualizationExtensions $true
+
+        Start-VM -Name '{{ friendly_hostname }}'
+  when: not _vm_exists.result
+...

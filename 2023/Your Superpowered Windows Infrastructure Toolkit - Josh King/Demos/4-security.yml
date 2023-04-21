@@ -1,0 +1,253 @@
+---
+- hosts:
+    - atrius
+    - bane
+  gather_facts: true
+  strategy: free
+
+  tasks:
+    - name: General Network Hardening
+      tags: network
+      block:
+        - name: Disable NetBIOS
+          community.windows.win_netbios:
+            state: disabled
+
+        - name: Disable WINS and LMHOSTS lookup
+          ansible.windows.win_powershell:
+            script: |
+              if ((Get-ItemPropertyValue HKLM:\SYSTEM\CurrentControlSet\Services\NetBT\Parameters -Name 'EnableLMHOSTS') -eq 1) {
+                $NicConfig = Get-WmiObject -List Win32_NetworkAdapterConfiguration
+                $null = $NicConfig.EnableWINS($false, $false)
+                $Ansible.Changed = $true
+              } else {
+                $Ansible.Changed = $false
+              }
+
+        - name: Disable 'File and Printer Sharing' feature on all network interfaces
+          community.windows.win_net_adapter_feature:
+            interface: '*'
+            state: disabled
+            component_id:
+            - ms_server
+          when: enable_file_and_print_nic is not defined
+
+    - name: Audit Policies
+      tags: audit
+      block:
+        # Note that these changes won't be reflected in the GUI.
+        # Changes can be checked by running a command (changing the subcategory to the one you want to check):
+        #
+        # auditpol /get /subcategory:"Credential Validation"
+        #
+        # Subcategories can be found here: https://technet.microsoft.com/en-us/library/cc766468.aspx
+
+        - name: 'Set Audit Policy: "Account Logon\Audit Credential Validation" to "Success and Failure"'
+          community.windows.win_audit_policy_system:
+            subcategory: Credential Validation
+            audit_type:
+            - success
+            - failure
+
+        - name: 'Set Audit Policy: "Logon/Logoff\Audit Account Lockout" to "Failure"'
+          community.windows.win_audit_policy_system:
+            subcategory: Account Lockout
+            audit_type:
+            - failure
+
+        - name: 'Set Audit Policy: "Privilege Use\Audit Sensitive Privilege Use" to "Success and Failure"'
+          community.windows.win_audit_policy_system:
+            subcategory: Sensitive Privilege Use
+            audit_type:
+            - success
+            - failure
+
+    - name: User Rights
+      tags: user_rights
+      block:
+        # Find the "name" values here:
+        # https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
+
+        - name: 'User Right: Set "Access this computer from the network" to Administrators'
+          ansible.windows.win_user_right:
+            name: SeNetworkLogonRight
+            users:
+            - .\Administrators
+            action: set
+
+        - name: 'User Right: Set "Deny access to this computer from the network" to include Guests'
+          ansible.windows.win_user_right:
+            name: SeDenyNetworkLogonRight
+            users:
+            - .\Guests
+            action: add
+
+        - name: 'User Right: Remove Administrators from "Debug programs"'
+          ansible.windows.win_user_right:
+            name: SeDebugPrivilege
+            users:
+            - .\Administrators
+            action: remove
+
+    - name: Security Policies
+      tags: sec_policies
+      notify: Restart Host
+      block:
+        # Values and info can be found here:
+        # https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/fa15485d-ae9f-456e-a08f-81f2e5725a7e
+        #
+        # Some things required inspecting a SecEdit.exe export before and after making a change in the GUI
+
+        - name: 'Set Policy: Do not store passwords using reversible encryption'
+          community.windows.win_security_policy:
+            section: System Access
+            key: ClearTextPassword
+            value: 0
+
+        - name: 'Set Policy: Disable Guest Account'
+          community.windows.win_security_policy:
+            section: System Access
+            key: EnableGuestAccount
+            value: 0
+
+        - name: 'Set Policy: Enable Administrator Account'
+          community.windows.win_security_policy:
+            section: System Access
+            key: EnableAdminAccount
+            value: 1
+
+        - name: 'Set Policy: Rename Administrator Account'
+          community.windows.win_security_policy:
+            section: System Access
+            key: NewAdministratorName
+            value: "SummitAdmin"
+
+        - name: 'Set Policy: Enable "Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings"'
+          community.windows.win_security_policy:
+            section: Registry Values
+            key: 'MACHINE\System\CurrentControlSet\Control\Lsa\SCENoApplyLegacyAuditPolicy'
+            value: "4,1"
+
+    - name: Trigger handlers
+      tags: always
+      meta: flush_handlers
+
+    - name: Firewall Rules
+      tags: firewall
+      block:
+        - name: Firewall rule to block NetBIOS (TCP)
+          community.windows.win_firewall_rule:
+            name: 'Block-TCP-NetBIOS'
+            group: '_Ansible'
+            localport: 137-139
+            action: block
+            direction: in
+            protocol: tcp
+            state: present
+            enabled: yes
+
+        - name: Firewall rule to block NetBIOS (UDP)
+          community.windows.win_firewall_rule:
+            name: 'Block-UDP-NetBIOS'
+            group: '_Ansible'
+            localport: 137-139
+            action: block
+            direction: in
+            protocol: udp
+            state: present
+            enabled: yes
+
+        - name: Firewall rule to block calc.exe (x64)
+          community.windows.win_firewall_rule:
+            name: 'Block-calc-x64'
+            group: '_Ansible'
+            action: block
+            direction: out
+            program: '%SystemRoot%\System32\calc.exe'
+            state: present
+            enabled: yes
+
+        - name: Firewall rule to block calc.exe (x86)
+          community.windows.win_firewall_rule:
+            name: 'Block-calc-x86'
+            group: '_Ansible'
+            action: block
+            direction: out
+            program: '%SystemRoot%\Syswow64\calc.exe'
+            state: present
+            enabled: yes
+
+        - name: Allow website access (TCP 80)
+          community.windows.win_firewall_rule:
+            name: 'Allow-web-80'
+            group: '_Ansible'
+            action: allow
+            direction: in
+            localport: 80
+            protocol: tcp
+            state: present
+            enabled: yes
+
+    - name: Local Group Policy
+      tags: gpo
+      block:
+        # Useful for finding values: https://admx.help
+
+        - name: Ensure latest version of PolicyFileEditor PowerShell module installed
+          community.windows.win_psmodule:
+            name: PolicyFileEditor
+            state: latest
+
+        - name: 'Set Firewall Profile Policies'
+          include_tasks: tasks/set-firewallpolicies.yml
+          loop:
+            - Domain
+            - Private
+            - Public
+
+        - name: 'Set Start Menu and Taskbar\Notifications: "Turn off toast notifications on the lock screen" to "Enabled"'
+          ansible.windows.win_powershell:
+            script: |
+              $PolicySplat = @{
+                Path      = '{{ user_policy_path }}'
+                Key       = 'SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications'
+                ValueName = 'NoToastApplicationNotificationOnLockScreen'
+                Data      = 1
+                Type      = 'dword'
+              }
+              if ((Get-PolicyFileEntry -Path $PolicySplat.Path -Key $PolicySplat.Key -ValueName $PolicySplat.ValueName).Data -eq $PolicySplat.Data) {
+                $Ansible.Changed = $false
+              } else {
+                Set-PolicyFileEntry @PolicySplat
+                $Ansible.Changed = $true
+              }
+          notify: "run gpupdate"
+
+        - name: 'Windows Components\Windows PowerShell: "Turn on PowerShell Script Block Logging" to "Enabled"'
+          ansible.windows.win_powershell:
+            script: |
+              $PolicySplat = @{
+                Path      = '{{ user_policy_path }}'
+                Key       = 'Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging'
+                ValueName = 'EnableScriptBlockLogging'
+                Data      = 1
+                Type      = 'dword'
+              }
+              if ((Get-PolicyFileEntry -Path $PolicySplat.Path -Key $PolicySplat.Key -ValueName $PolicySplat.ValueName).Data -eq $PolicySplat.Data) {
+                $Ansible.Changed = $false
+              } else {
+                Set-PolicyFileEntry @PolicySplat
+                $Ansible.Changed = $true
+              }
+          notify: "run gpupdate"
+
+  handlers:
+    - name: Restart Host
+      ansible.windows.win_reboot:
+
+    - name: Apply updated policy
+      ansible.windows.win_powershell:
+        script: |
+          gpupdate.exe /force
+      listen: 'run gpupdate'
+...

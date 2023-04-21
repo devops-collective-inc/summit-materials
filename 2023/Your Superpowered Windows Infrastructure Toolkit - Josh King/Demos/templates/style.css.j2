@@ -1,0 +1,440 @@
+
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+
+    ========================================================  */
+
+
+/*=======================================
+    GENERAL STYLES
+==================================================*/
+
+body {
+          font-family:'Open Sans', sans-serif;
+    font-size:14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Open Sans', sans-serif;
+}
+
+h1 {
+    line-height:50px;
+    font-weight:900;
+    font-size:40px;
+    padding:10px 20px 5px 20px;
+    text-transform:uppercase;
+}
+
+ h1:before {
+content: '';
+display: block;
+position: absolute;
+width: 120px;
+height: 1px;
+background: #fff;
+margin: auto;
+left: -150px;
+right: 0;
+}
+
+ h1:after {
+content: '';
+display: block;
+position: absolute;
+width: 120px;
+height: 1px;
+background: #fff;
+margin: auto;
+left: 0;
+right: -150px;
+}
+.pad-adjust {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.text-center {
+    text-align:center;
+}
+
+h2 {
+    line-height:50px;
+}
+h3 {
+    line-height:30px;
+    padding-bottom:20px;
+}
+h4 {
+    padding-top:10px;
+    line-height:40px;
+    padding-bottom:20px;
+}
+
+p {
+    font-weight:300;
+    line-height:30px;
+    padding-bottom:20px;
+}
+
+.space-free {
+    height:100px;
+}
+
+.g-pad-bottom {
+    padding-bottom:40px;
+}
+.for-full-back {
+     /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=90);
+
+  /* Netscape */
+  -moz-opacity: 0.9;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.9;
+
+  /* Good browsers */
+  opacity: 0.9;
+}
+
+section {
+    padding-top:20px;
+}
+
+ /*=======================================
+    SIDE MENUS STYLES
+==================================================*/
+
+#cbp-spmenu-s1 {
+    overflow:auto;
+}
+
+#cbp-spmenu-s1>h3 {
+    text-align:right;
+}
+#icon-left {
+    text-align:right;
+}
+
+#showLeftPush {
+    position:fixed;
+    z-index:9999;
+    left:5px;
+    top:20px;
+    color: #fff;
+}
+
+#cbp-spmenu-s2 {
+     overflow:auto;
+}
+ #cbp-spmenu-s2 > h3 {
+     text-align:left;
+    }
+#icon-right {
+    text-align:right;
+}
+#showRightPush {
+    position: fixed;
+    z-index: 9999;
+     right: 5px;
+     top: 20px;
+     color: #fff;
+}
+/*=======================================
+    COMPONENTS.CSS ADJUSTMENTS STYLES
+==================================================*/
+
+.cbp-spmenu a:focus,.cbp-spmenu a:hover {
+    text-decoration:none;
+}
+
+.cbp-spmenu a>i {
+    margin-right:25px;
+}
+.cbp-spmenu h3 {
+font-size: 2.9em;
+font-weight: 900;
+color:#fff;
+padding:30px;
+
+}
+
+.cbp-spmenu a {
+display: block;
+color: #fff;
+font-size: 1.1em;
+font-weight: 900;
+}
+
+/*=======================================
+    HOME SECTION STYLES
+==================================================*/
+
+
+.head-btn-one {
+    background-color: rgba(252, 64, 101, 1);
+     border: 0px solid #fff;
+
+}
+
+#home {
+    padding-top:130px;
+    padding-bottom:200px;
+    color:#fff;
+}
+.head-main {
+    font-size:80px ;
+    font-weight:900;
+
+}
+.head-sub-main {
+    font-size:40px ;
+    font-weight:600;
+    padding:5px 20px 10px 20px;
+}
+.head-last {
+    font-size:20px ;
+    font-weight:300;
+    padding:5px 20px 20px 20px;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+border-radius: 0px;
+
+}
+
+/*=======================================
+    ABOUT SECTION STYLES
+==================================================*/
+
+.team-member {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.team-member > img {
+    float: left;
+    width: 100%;
+}
+.team-member > h3 {
+    background: rgba(252, 64, 101, 1);
+    bottom: 25px;
+    color:#fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 16px;
+    padding: 15px 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+.team-member:hover > h3 {
+    background: #0d77b6;
+    bottom: -55px;
+    color: #FFFFFF;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+/*=======================================
+    PRICE SECTION STYLES
+==================================================*/
+#price-sec {
+    padding-top: 80px;
+     padding-bottom: 80px;
+}
+
+.plan {
+    background: #eef1f3;
+    padding: 0 0 15px 0;
+    margin: 30px 0px;
+    list-style: none;
+    text-align: center;
+
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+         -o-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+}
+
+.plan:hover {
+    -webkit-transform: scale(1.2);
+       -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+         -o-transform: scale(1.2);
+            transform: scale(1.2);
+}
+
+.plan li {
+    padding: 15px 0px;
+    color: #434749;
+    border-top: 1px dashed #000;
+}
+
+.plan li.plan-head {
+   padding: 15px 0px;
+background-color: #0d77b6;
+color: #FFFFFF;
+line-height: 20px;
+font-size: 20px;
+font-weight: 600;
+border: none;
+   }
+
+.plan li.main-price {
+   padding: 25px 0px;
+background-color:rgba(21, 180, 255, 1);
+color: #fff;
+border: none;
+font-weight: 900;
+font-size: 30px;
+}
+
+.c-b {
+    background-color:#B60D43!important;
+}
+.c-v {
+    background-color: #01AA30!important;
+}
+.c-a {
+    background-color: #818181!important;
+}
+/*=======================================
+    SERVICE SECTION STYLES
+==================================================*/
+#services-inner {
+    padding-top:50px;
+    padding-bottom:40px;
+}
+
+.service-div {
+	width: 100%;
+	min-height: 100px;
+	background-color: #F2F4F6;
+	box-shadow: none;
+	border: 0;
+    padding:20px;
+    margin-bottom:30px;
+}
+.service-div > i {
+    color:rgba(252, 64, 101, 1);
+}
+
+/*=======================================
+    STATS SECTION STYLES
+==================================================*/
+.stats-div {
+    text-align:center;
+    width: 100%;
+    min-height: 100px;
+    padding: 30px 20px 30px 20px;
+    color:#fff;
+}
+
+.stats-div > h3 {
+    font-size:60px;
+    font-weight:900;
+}
+
+/*=======================================
+    CONTACT STYLES
+==================================================*/
+#contact-inner {
+    padding-bottom:60px;
+    padding-bottom:50px;
+}
+.contact-cls {
+    font-size:20px;
+    line-height:40px;
+}
+    .contact-cls i {
+        margin-right:8px;
+    }
+
+ /*=======================================
+  SOCIAL  STATS SECTION STYLES
+==================================================*/
+ .social-stats-div {
+    text-align:center;
+    width: 100%;
+    min-height: 100px;
+    padding: 30px 20px 30px 20px;
+    color:#fff;
+}
+
+.social-stats-div > h3 {
+    font-size:35px;
+    font-weight:900;
+    line-height:40px;
+}
+
+/*=======================================
+    COLOR CODES
+==================================================*/
+
+.color-bg-one {
+    background-color:rgba({% if env is defined and "Production" == env %}0, 122, 255, 1{% else %}255, 98, 0, 1{% endif %})!important;
+    color:#fff;
+}
+.color-white {
+   background-color:#fff!important;
+}
+.color-dark {
+   background-color:#696969!important;
+}
+
+.color-light {
+   background-color:#E9E9E9!important;
+}
+
+/*=======================================
+    FOOTER STYLES
+==================================================*/
+
+
+#footer {
+    background-color:#000;
+    color:#fff;
+    padding:20px 50px 20px 50px;
+    text-align:right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+---
+ansible_host: 172.23.0.120
+ansible_user: ansible
+ansible_password: '<PLACEHOLDER>'
+
+win_password: '<PLACEHOLDER>'
+
+local_ip_addr: '{{ ansible_host }}'
+local_ip_gateway: 172.23.0.2
+friendly_hostname: Bane
+backinfo_description: 'Summit 2023 Demo VM - Dev'
+env: 'Development'
+
+hyperv_memory_start: '8GB'
+hyperv_memory_min: ''
+hyperv_memory_max: ''
+
+hyperv_cpu: 4
+...
