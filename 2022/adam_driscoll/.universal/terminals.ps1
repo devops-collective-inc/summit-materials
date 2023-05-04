@@ -1,0 +1,1 @@
+﻿New-PSUTerminal -Name "Cache" -Environment "Integrated" -IdleTimeout 0

@@ -1,0 +1,1 @@
+﻿New-PSUDashboard -Name "Lifecounter" -FilePath "dashboards\d\d.ps1" -BaseUrl "/life" -Framework "UniversalDashboard:Latest" -SessionTimeout 0 -AutoDeploy -Credential "Default"

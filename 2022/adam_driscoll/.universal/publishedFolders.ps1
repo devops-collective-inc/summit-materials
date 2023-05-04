@@ -1,0 +1,1 @@
+﻿New-PSUPublishedFolder -RequestPath "/shared" -Path "C:\ProgramData\UniversalAutomation\Repository\Shared" -DefaultDocument @('')
